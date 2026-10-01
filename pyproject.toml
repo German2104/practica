@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ec-factor-analysis"
+version = "0.1.0"
+description = "Prototype for factor analysis of NPV and economic capital changes"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.115",
+    "httpx>=0.27",
+    "httpx2>=2.0",
+    "joblib>=1.4",
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "pydantic>=2.10",
+    "pydantic-ai-slim[ag-ui,openai]>=2.51",
+    "pydantic-settings>=2.5",
+    "scikit-learn>=1.5",
+    "uvicorn>=0.32",
+    "xlrd>=2.0.1",
+]
+
+[project.optional-dependencies]
+ml = ["xgboost>=2.1", "shap>=0.46", "interpret>=0.6"]
+
+[dependency-groups]
+dev = ["mypy>=1.13", "pandas-stubs>=2.2", "pytest>=8.3", "ruff>=0.8"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ec_analysis"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["ec_analysis"]
+mypy_path = "src"
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "shap", "joblib"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

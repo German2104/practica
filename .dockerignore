@@ -1,0 +1,14 @@
+.git
+.venv
+.agents
+.codex
+data/raw
+data/processed
+data/experiments
+data/jobs
+__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+docs/report/rendered
+.env

@@ -1,0 +1,27 @@
+{
+  "generator_version": "4",
+  "scenario": "credit",
+  "sample_count": 5000,
+  "random_seed": 2028,
+  "csv_sha256": "8076425bb01169487b1691dc92cb3364b2e415bcb938b462db0a1947d418dd05",
+  "formula_source": "src/ec_analysis/data/synthetic.py",
+  "formula_sha256": "0a480a1dde5e91bc8baf94f967c40ba5aa59e0ae3d2e430cc33ab6f4b7615ce5",
+  "component_totals": {
+    "T0": {
+      "base": 740861.097008653,
+      "ltv_threshold": -22501.113129568002,
+      "ltv_pd_interaction": -5539.738257456011
+    },
+    "T1": {
+      "base": 693588.3763780929,
+      "ltv_threshold": -49590.33265518397,
+      "ltv_pd_interaction": -12788.518254686087
+    }
+  },
+  "component_deltas": {
+    "base": -47272.72063056007,
+    "ltv_threshold": -27089.21952561597,
+    "ltv_pd_interaction": -7248.779997230076
+  },
+  "note": "Generating terms, not SHAP truth; CSV targets are rounded to four decimals."
+}

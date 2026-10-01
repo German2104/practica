@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Clean Code"
+  short_description: "Python по pylines: классы, DI и пошаговые сценарии"
+  default_prompt: "Используй $python-clean-code: разложи задачу на понятные шаги и реализуй по pylines с небольшими классами, явным DI и сценарием, читаемым сверху вниз."
