@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-10-02T07:14:01.519613+00:00",
+  "provider": "OpenRouter",
+  "model": "openai/gpt-4.1-mini",
+  "analysis_path": "data/experiments/completion-v3/mixed/analysis.json",
+  "cases": [
+    {
+      "case": "interaction",
+      "question": "Каков совместный вклад LTV и PD? Как учитывать его вместе с основными вкладами?",
+      "required_ids": [
+        "pair:7"
+      ],
+      "passed": true,
+      "result": {
+        "method": "verified_fact_selection_v1",
+        "analysis_sha256": "fa9c91d6cc035fdef40086f4c106aeb25e040272596a44cb3086884c8d7d62ec",
+        "model_name": "openrouter:openai/gpt-4.1-mini",
+        "answer_supported": true,
+        "paragraphs": [
+          {
+            "fact_id": "change",
+            "text": "Показатель npv: исходное значение 783556,67, итоговое 730035,63, изменение -53521,043.",
+            "references": [
+              "initial_value",
+              "final_value",
+              "total_change"
+            ]
+          },
+          {
+            "fact_id": "remainder",
+            "text": "Необъяснённый остаток: 1193,3627. Подписанная доля относительно модуля изменения: 2,2297075%.",
+            "references": [
+              "unexplained_remainder",
+              "unexplained_fraction"
+            ]
+          },
+          {
+            "fact_id": "reliability",
+            "text": "Надёжность объяснения подтверждена проверками этого перехода.",
+            "references": [
+              "selection_status",
+              "confidence_level",
+              "validation_reliability",
+              "test_reliability"
+            ]
+          },
+          {
+            "fact_id": "causality",
+            "text": "Вклады описывают обученную модель и не доказывают причинность. Результат одной пары периодов нельзя переносить на все будущие периоды без дополнительных проверок.",
+            "references": [
+              "limitations"
+            ]
+          },
+          {
+            "fact_id": "parameters",
+            "text": "Проверка вкладов при смене параметров: пройдена. Минимальное сходство 0,95767627 при пороге 0,85; минимальное согласие знаков 1 при пороге 0,9.",
+            "references": [
+              "benchmark_summary/6/parameter_sensitivity"
+            ]
+          },
+          {
+            "fact_id": "pair:7",
+            "text": "Совместный вклад «Отношение кредита к залогу» и «Вероятность дефолта»: -1143,0196. Эта сумма учтена отдельно от основных вкладов.",
+            "references": [
+              "interactions/7/contribution",
+              "attribution-portfolio-gam_pairwise.csv#[\"ltv\", \"pd\"]"
+            ]
+          }
+        ],
+        "text": "Показатель npv: исходное значение 783556,67, итоговое 730035,63, изменение -53521,043.\n\nНеобъяснённый остаток: 1193,3627. Подписанная доля относительно модуля изменения: 2,2297075%.\n\nНадёжность объяснения подтверждена проверками этого перехода.\n\nВклады описывают обученную модель и не доказывают причинность. Результат одной пары периодов нельзя переносить на все будущие периоды без дополнительных проверок.\n\nПроверка вкладов при смене параметров: пройдена. Минимальное сходство 0,95767627 при пороге 0,85; минимальное согласие знаков 1 при пороге 0,9.\n\nСовместный вклад «Отношение кредита к залогу» и «Вероятность дефолта»: -1143,0196. Эта сумма учтена отдельно от основных вкладов.",
+        "checked": true
+      }
+    },
+    {
+      "case": "factor_detail",
+      "question": "Подробно про объём: какой у него вклад в изменение и чем он отличается от глобальной важности?",
+      "required_ids": [
+        "factor:4",
+        "importance:0",
+        "importance-method"
+      ],
+      "passed": true,
+      "result": {
+        "method": "verified_fact_selection_v1",
+        "analysis_sha256": "fa9c91d6cc035fdef40086f4c106aeb25e040272596a44cb3086884c8d7d62ec",
+        "model_name": "openrouter:openai/gpt-4.1-mini",
+        "answer_supported": true,
+        "paragraphs": [
+          {
+            "fact_id": "change",
+            "text": "Показатель npv: исходное значение 783556,67, итоговое 730035,63, изменение -53521,043.",
+            "references": [
+              "initial_value",
+              "final_value",
+              "total_change"
+            ]
+          },
+          {
+            "fact_id": "remainder",
+            "text": "Необъяснённый остаток: 1193,3627. Подписанная доля относительно модуля изменения: 2,2297075%.",
+            "references": [
+              "unexplained_remainder",
+              "unexplained_fraction"
+            ]
+          },
+          {
+            "fact_id": "reliability",
+            "text": "Надёжность объяснения подтверждена проверками этого перехода.",
+            "references": [
+              "selection_status",
+              "confidence_level",
+              "validation_reliability",
+              "test_reliability"
+            ]
+          },
+          {
+            "fact_id": "causality",
+            "text": "Вклады описывают обученную модель и не доказывают причинность. Результат одной пары периодов нельзя переносить на все будущие периоды без дополнительных проверок.",
+            "references": [
+              "limitations"
+            ]
+          },
+          {
+            "fact_id": "parameters",
+            "text": "Проверка вкладов при смене параметров: пройдена. Минимальное сходство 0,95767627 при пороге 0,85; минимальное согласие знаков 1 при пороге 0,9.",
+            "references": [
+              "benchmark_summary/6/parameter_sensitivity"
+            ]
+          },
+          {
+            "fact_id": "factor:4",
+            "text": "Вклад фактора «Объём» в изменение: 10117,383 в единицах npv.",
+            "references": [
+              "factor_contributions/4/contribution",
+              "attribution-portfolio-gam_pairwise.csv#[\"volume\"]"
+            ]
+          },
+          {
+            "fact_id": "importance-method",
+            "text": "Глобальная важность показывает рост ошибки при перемешивании фактора на валидации. Она отличается от вклада в изменение портфеля; коррелированные факторы могут разделять важность.",
+            "references": [
+              "global_importance/method",
+              "global_importance/warnings"
+            ]
+          },
+          {
+            "fact_id": "importance:0",
+            "text": "Глобальная важность «Объём»: средний рост RMSE 60,670823, разброс 1,0793318.",
+            "references": [
+              "global_importance/factors/0",
+              "global-importance.json#factors/0"
+            ]
+          }
+        ],
+        "text": "Показатель npv: исходное значение 783556,67, итоговое 730035,63, изменение -53521,043.\n\nНеобъяснённый остаток: 1193,3627. Подписанная доля относительно модуля изменения: 2,2297075%.\n\nНадёжность объяснения подтверждена проверками этого перехода.\n\nВклады описывают обученную модель и не доказывают причинность. Результат одной пары периодов нельзя переносить на все будущие периоды без дополнительных проверок.\n\nПроверка вкладов при смене параметров: пройдена. Минимальное сходство 0,95767627 при пороге 0,85; минимальное согласие знаков 1 при пороге 0,9.\n\nВклад фактора «Объём» в изменение: 10117,383 в единицах npv.\n\nГлобальная важность показывает рост ошибки при перемешивании фактора на валидации. Она отличается от вклада в изменение портфеля; коррелированные факторы могут разделять важность.\n\nГлобальная важность «Объём»: средний рост RMSE 60,670823, разброс 1,0793318.",
+        "checked": true
+      }
+    }
+  ],
+  "passed": true,
+  "limitation": "These two questions only; not a guarantee for arbitrary dialogue."
+}

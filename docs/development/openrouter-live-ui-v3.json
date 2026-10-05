@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-02T07:18:49.845992+00:00",
+  "provider": "OpenRouter",
+  "model": "openai/gpt-4.1-mini",
+  "real_provider": true,
+  "ui_url": "http://127.0.0.1:8011/",
+  "analysis_job": "2f20193590624c8290a3f41f60ed60c2",
+  "analysis_sha256": "978d0234fbb2f5b94b3cc5a16c094ff32868dd3aa3f17f39e4a63d8cefd96cca",
+  "analysis_seconds": 1.97,
+  "question": "Объясни изменение и почему результат предварительный. Покажи остаток.",
+  "observed_fact_ids": [
+    "change",
+    "remainder",
+    "reliability",
+    "causality",
+    "quality:validation",
+    "quality:test"
+  ],
+  "observed_total_change": -8049.044399999999,
+  "observed_signed_remainder": -1262.1700963480162,
+  "checks": [
+    "Example CSV processed by owned worker",
+    "Configured OpenRouter model shown",
+    "Real checked AG-UI answer visible",
+    "Signed remainder and undefined reliability shown",
+    "Separate validation and test reasons retained",
+    "Remainder and validation source disclosures expanded",
+    "Current frontend loaded after server restart"
+  ],
+  "frontend_sha256": {
+    "src/ec_analysis/api/static/index.html": "54c7fe7d16ee7f987ce1a9468b850ca86e3a5c7b5e6b379ac7a2a2694d42dd83",
+    "src/ec_analysis/api/static/app.js": "814f02b4e8899f53d29443aed30f465d87e560234221af22f51ba923b10baffd",
+    "src/ec_analysis/api/static/style.css": "ebc212f14d9a0821eb07dd567ff258f3d600fec6d9ad11a6c23fda263d3c4704"
+  },
+  "screenshots": {
+    "docs/development/screenshots/v3-openrouter-chat.jpg": "172d3aff9d5615ba61482cc7b4ccc125f7c2d1b4dd16888980c9e8e9983bcd4e",
+    "docs/development/screenshots/v3-openrouter-quality.jpg": "4682a47d3d6c7122d01de0f0c7c0b6b69fb18ba785958f1f67e60cf599ba27f4"
+  },
+  "control_reports": {
+    "data/reports/openrouter-live-v3.json": "736fff795cd9785ede0125f363e4a6ca06280d1dded3b09a1399377b94cea886",
+    "data/reports/openrouter-live-detail-v3.json": "4a6ba8a393ac84aec168c9072500f2c49f833bcb436eebcdea8ed48787802285"
+  },
+  "limitation": "Verifies these seven CLI questions and one browser question; not all possible conversations."
+}

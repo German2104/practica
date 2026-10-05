@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-10-02T12:08:16.649479+00:00",
+  "url": "http://127.0.0.1:8011/",
+  "job_identifier": "4f6838618262481c98e087bf62b34a8e",
+  "dataset_sha256": "8076425bb01169487b1691dc92cb3364b2e415bcb938b462db0a1947d418dd05",
+  "analysis_sha256": "11894fa0f339a4b16e6690adc5cd92c56779faa307a996ed2722db5978b5f622",
+  "model_name": "stable_gam",
+  "model_families": 1,
+  "sample_count": 5000,
+  "status": "explanation_validated",
+  "bootstrap_repeats": 20,
+  "stability_score": 0.9861679070076077,
+  "alpha": 0.1,
+  "parameter_sensitivity": 0.9262662896339062,
+  "parameter_sign_agreement": 1.0,
+  "test_rmse": 5.257627458456881,
+  "unexplained_remainder": -1880.0947078751924,
+  "provider": "OpenRouter",
+  "llm_model": "openai/gpt-4.1-mini",
+  "real_provider": true,
+  "mock_provider": false,
+  "chat_question": "Какие факторы дали основной вклад и насколько устойчив результат?",
+  "observed_answer": "Checked paragraphs rendered in the browser; residual sources expanded.",
+  "elapsed_seconds_ui": 3.02,
+  "hashes": {
+    "src/ec_analysis/api/static/index.html": "b442f6ef7d61111efca34d93781cbc0bb71222847ef35d2397d3b99265161b5f",
+    "src/ec_analysis/api/static/app.js": "07e74d2d600f84129045651772e3a8eae0846942cd1c55ec0e90edaf3e1ab67e",
+    "src/ec_analysis/api/static/style.css": "ebc212f14d9a0821eb07dd567ff258f3d600fec6d9ad11a6c23fda263d3c4704",
+    "docs/development/screenshots/v4-single-gam-result.jpg": "3713ad4a5cf2edec18da31a248d19a438c30983a8f002a3993e8ed8d9dcb2707",
+    "docs/development/screenshots/v4-single-gam-checks.jpg": "37e4bda901f4cd4f4003222910efc2798642cebefbd81b611e8a477c4d5485da",
+    "docs/development/screenshots/v4-single-gam-chat.jpg": "d245cb887cd96c75ef2b20b312df92de42bfdf3963b3d65d33f183bd42ad5e6e",
+    "docs/development/v4-single-gam-chat.txt": "85ecc08138ade7810be9946b6e15f11fdc7e3bca5a64c921d27cdeea1f5f4697"
+  },
+  "previous_cached_sample_job": {
+    "identifier": "131e17f9df604b15a8c61f8d6a1730bf",
+    "paired_count": 500,
+    "status": "attribution_checked",
+    "note": "Cached legacy sample was refused. Disabling browser cache fetched 5000 clients."
+  },
+  "series_seed": 2028,
+  "web_seed": 2026,
+  "practice_report_edited": false
+}

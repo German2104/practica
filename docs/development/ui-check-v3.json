@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-01T22:00:49.982624+00:00",
+  "application": "local FastAPI v3",
+  "full_demo_job": "97dcaf78775545eab2043130b267660c",
+  "full_demo_seconds": 139.65,
+  "llm_ui_test": "TestModel only; no external LLM request",
+  "checks": [
+    "CSV example and owned process",
+    "honest refusal of reliability",
+    "importance distinct from contributions",
+    "profile including target distribution",
+    "model quality and parameter status",
+    "conditional curves and interaction grid",
+    "disabled chat without configuration",
+    "checked AG-UI response in browser",
+    "remainder source references expanded",
+    "HTML escaped text and readable layout"
+  ],
+  "screenshots": {
+    "docs/development/screenshots/v3-model-checks.jpg": "70baa1ac4f89b11cb7c926832f17f38e3b4ab793971dec11bb7ee4630665cac9",
+    "docs/development/screenshots/v3-testmodel-chat.jpg": "5d4824ee253b90c4de08db5663920458fae0fdb2e352615c0cdec8f01b346a10"
+  },
+  "limitation": "Real OpenRouter model is not validated; live check requires user key.",
+  "frontend_sha256_at_browser_check": {
+    "src/ec_analysis/api/static/index.html": "54c7fe7d16ee7f987ce1a9468b850ca86e3a5c7b5e6b379ac7a2a2694d42dd83",
+    "src/ec_analysis/api/static/app.js": "90c5ce093d6a4e248d7273e5c83cf41ae2c5058c111af1d1637015f04584b593",
+    "src/ec_analysis/api/static/style.css": "ebc212f14d9a0821eb07dd567ff258f3d600fec6d9ad11a6c23fda263d3c4704"
+  },
+  "current_frontend_sha256": {
+    "src/ec_analysis/api/static/index.html": "54c7fe7d16ee7f987ce1a9468b850ca86e3a5c7b5e6b379ac7a2a2694d42dd83",
+    "src/ec_analysis/api/static/app.js": "814f02b4e8899f53d29443aed30f465d87e560234221af22f51ba923b10baffd",
+    "src/ec_analysis/api/static/style.css": "ebc212f14d9a0821eb07dd567ff258f3d600fec6d9ad11a6c23fda263d3c4704"
+  },
+  "followup_note": "After the browser run, the no-numeric-curves label was cleared in app.js. Categorical-only target=value analysis passed through the backend; the optional browser upload was interrupted and is not claimed as completed."
+}
