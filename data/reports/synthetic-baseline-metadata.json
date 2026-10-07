@@ -1,0 +1,44 @@
+{
+  "run_date": "2026-09-29",
+  "metadata_created_at": "2026-09-29T18:21:11.118998+00:00",
+  "run_kind": "synthetic_smoke_baseline",
+  "git_revision": null,
+  "code_state": "initial uncommitted implementation; source hashes recorded below",
+  "command": ".venv/bin/python scripts/run_benchmark.py data/portfolio_data.csv",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "pydantic": "2.13.5"
+  },
+  "generator": {
+    "samples": 500,
+    "seed": 42
+  },
+  "model": {
+    "name": "Ridge",
+    "alpha": 1.0,
+    "scaling": false
+  },
+  "split": {
+    "method": "train_test_split on unique loan ids",
+    "random_state": 42,
+    "validation_fraction": 0.2,
+    "training_loans": 400,
+    "validation_loans": 100,
+    "both_periods_per_loan": true,
+    "independent_final_test": false
+  },
+  "portfolio_evaluation": "all loans, including training loans; not a held-out portfolio metric",
+  "file_sha256": {
+    "data/portfolio_data.csv": "d3187b08305c5a821106112616231f06956409dfa3823dc2f72646df5099274d",
+    "data/reports/synthetic-baseline.json": "d52c6a406100ba00fefac76676d0e32debfaa4e9f2bf666c9326e9a1095ee164",
+    "scripts/generate_dataset.py": "6841a1a688d9d54efd803daeb8c98ac4fb1a7608f147d24565ca908d73e71286",
+    "scripts/run_benchmark.py": "abd21d466d4d18246e80dac67e43ff202a504de3248c0f87f186b75b79c7c4c4",
+    "src/ec_analysis/engine/benchmark.py": "1f1e4b16aa08ed2c17d0450a8ea41bb518b0b950006b6369aa27ab868d9ecbf6",
+    "src/ec_analysis/schemas/dataset.py": "f4e5a91f35c50a0c8aac6dd8c8db386ca9cc8392e38f6784f44c84ffcb3ded7f",
+    "src/ec_analysis/schemas/state.py": "fb11c4b37b544672a9808a3825871a1b85ecd25156be06e11f7a2859058173d9",
+    "uv.lock": "285a5d9a7391f633725ff7e90b6008ec2f925c3e14fe03297cee1b0c3aad8550"
+  }
+}

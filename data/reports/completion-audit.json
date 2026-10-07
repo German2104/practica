@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "tests": {
+    "passed": 91,
+    "warnings": 3,
+    "ruff": "passed",
+    "mypy_files": 49
+  },
+  "artifacts": {
+    "files_checked": 440,
+    "effect_references_checked": 1029,
+    "states_checked": 13,
+    "source_checks": 663,
+    "code_version": "f247c7f0c61bc31263c39684dcbbedf599b928e7ac86fb229941fa66ca876c05",
+    "successful_bootstrap_fits": 705,
+    "shape_diagnostics_models": 70
+  },
+  "accepted_runs": 11,
+  "numerical_failures": [
+    {
+      "run": "2005-06-07",
+      "model": "xgboost",
+      "failure": "ValueError: Local attribution fails additivity; max error=0.1425018310546875"
+    },
+    {
+      "run": "2005-08-09",
+      "model": "xgboost",
+      "failure": "replicate 2: ValueError: Local attribution fails additivity; max error=0.542877197265625"
+    },
+    {
+      "run": "2005-08-09",
+      "model": "xgboost",
+      "failure": "replicate 3: ValueError: Local attribution fails additivity; max error=0.206268310546875"
+    },
+    {
+      "run": "2005-08-09",
+      "model": "xgboost",
+      "failure": "replicate 7: ValueError: Local attribution fails additivity; max error=0.405975341796875"
+    },
+    {
+      "run": "2005-08-09",
+      "model": "xgboost",
+      "failure": "replicate 8: ValueError: Local attribution fails additivity; max error=0.3951416015625"
+    },
+    {
+      "run": "2005-08-09",
+      "model": "xgboost",
+      "failure": "replicate 9: ValueError: Local attribution fails additivity; max error=0.361053466796875"
+    }
+  ],
+  "original_case_sha256": "63d220b52d41be537bb1b2c1a4aa4ab499647c83a576438b4eb246cf38b20740",
+  "ui": {
+    "url": "http://127.0.0.1:8000/",
+    "browser_flow": "example → run → complete → factors, balance, models, sections, export links",
+    "real_csv": {
+      "dataset": "UCI August–September",
+      "clients": 29056,
+      "browser_elapsed_seconds": 148.7,
+      "result": "accepted"
+    },
+    "integration": "upload, completion, invalid CSV, export allowlist, cancellation, timeout, concurrent-job refusal"
+  },
+  "interface_sha256": {
+    "src/ec_analysis/api/static/index.html": "9cfab092911b25486cd9d93a35316b2fd1ccf957894659a8d334e099892f512d",
+    "src/ec_analysis/api/static/style.css": "cf26c9bb155790dddd32a20eb1a72c5b7e936b14d5591e32fbf88f0c6121cca5",
+    "src/ec_analysis/api/static/app.js": "5aa40419209e84c8ed53c9424f7f29060060f8080b8eb09990be54c8f2a65e7d"
+  },
+  "docker": "Build not verified: client installed, daemon unavailable",
+  "limitations": [
+    "Prototype criteria are not bank certification",
+    "UCI target is an assumed valuation",
+    "Bootstrap percentiles are exploratory",
+    "Core tests are independent of measured final-test quality"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "scope": "development validation only; not final test",
+  "records": [
+    {
+      "scenario": "credit",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 0.01,
+      "rmse": 6.737460218767892,
+      "seconds": 0.018350415979512036
+    },
+    {
+      "scenario": "credit",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 1,
+      "rmse": 7.21919033314888,
+      "seconds": 0.008923458051867783
+    },
+    {
+      "scenario": "credit",
+      "knots": 8,
+      "degree": 1,
+      "alpha": 1,
+      "rmse": 7.771386076255117,
+      "seconds": 0.008609583019278944
+    },
+    {
+      "scenario": "credit",
+      "knots": 8,
+      "degree": 3,
+      "alpha": 1,
+      "rmse": 25.582856868062034,
+      "seconds": 0.014586374978534877
+    },
+    {
+      "scenario": "credit",
+      "knots": 10,
+      "degree": 3,
+      "alpha": 10,
+      "rmse": 16.19845134412015,
+      "seconds": 0.020813875016756356
+    },
+    {
+      "scenario": "credit",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 10,
+      "rmse": 10.247021916766318,
+      "seconds": 0.009398958005476743
+    },
+    {
+      "scenario": "mixed",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 0.01,
+      "rmse": 861.6695296198664,
+      "seconds": 0.008165500010363758
+    },
+    {
+      "scenario": "mixed",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 1,
+      "rmse": 174.37100478009003,
+      "seconds": 0.00869329198030755
+    },
+    {
+      "scenario": "mixed",
+      "knots": 8,
+      "degree": 1,
+      "alpha": 1,
+      "rmse": 67.08034548074187,
+      "seconds": 0.007979709014762193
+    },
+    {
+      "scenario": "mixed",
+      "knots": 8,
+      "degree": 3,
+      "alpha": 1,
+      "rmse": 956.7050262661708,
+      "seconds": 0.012112082971725613
+    },
+    {
+      "scenario": "mixed",
+      "knots": 10,
+      "degree": 3,
+      "alpha": 10,
+      "rmse": 721.5262575135688,
+      "seconds": 0.01601216697599739
+    },
+    {
+      "scenario": "mixed",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 10,
+      "rmse": 119.2278416087602,
+      "seconds": 0.008066166948992759
+    },
+    {
+      "scenario": "linear",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 0.01,
+      "rmse": 290.35460899933156,
+      "seconds": 0.00786295800935477
+    },
+    {
+      "scenario": "linear",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 1,
+      "rmse": 91.68227762284343,
+      "seconds": 0.007701416965574026
+    },
+    {
+      "scenario": "linear",
+      "knots": 8,
+      "degree": 1,
+      "alpha": 1,
+      "rmse": 37.46089633147135,
+      "seconds": 0.0077133330050855875
+    },
+    {
+      "scenario": "linear",
+      "knots": 8,
+      "degree": 3,
+      "alpha": 1,
+      "rmse": 368.12200236414486,
+      "seconds": 0.011259458027780056
+    },
+    {
+      "scenario": "linear",
+      "knots": 10,
+      "degree": 3,
+      "alpha": 10,
+      "rmse": 359.9591426732967,
+      "seconds": 0.016120833053719252
+    },
+    {
+      "scenario": "linear",
+      "knots": 6,
+      "degree": 3,
+      "alpha": 10,
+      "rmse": 50.18656568790071,
+      "seconds": 0.008009082986973226
+    }
+  ]
+}

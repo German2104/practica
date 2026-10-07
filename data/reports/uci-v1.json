@@ -1,0 +1,4538 @@
+{
+  "created_at": "2026-09-29T19:39:45.439113+00:00",
+  "source_sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602",
+  "protocol_version": "forward_grouped_hash_v2",
+  "seed": 2026,
+  "bootstrap_repeats": 10,
+  "tuning": true,
+  "elapsed_seconds": 152.6367826249916,
+  "artifact_directory": "data/experiments/uci-v1",
+  "windows": [
+    {
+      "window": "2005-04-05",
+      "dataset_sha256": "ab4185b5e794798dcc9b8072b8da4f7dacddf9ddfdbbfc4d9bbe21eceaf74a4a",
+      "manifest_sha256": "34f8a3ed1b3285fe0a9b3f96835134c06e2475298590f6484108c1fdfcb7a728",
+      "analysis": {
+        "target_metric": "model_npv",
+        "initial_value": -5031157.785621965,
+        "final_value": -4980398.656268737,
+        "total_change": 50759.129353228025,
+        "selected_model": "quadratic_ridge",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 1843.438512670587,
+            "predicted_change": 0.0,
+            "signed_remainder": 58912.01920397836,
+            "elapsed_seconds": 0.018413749989122152,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 1843.438512670587,
+              "mae": 585.8526393613975,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": 0.0,
+              "signed_remainder": 58912.01920397836,
+              "absolute_remainder": 58912.01920397836,
+              "remainder_fraction": 1.0,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 1.0000097284645808
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "mean",
+              "scope": "validation",
+              "method": "constant_delta_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 0.0,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-mean.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": 0.0,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-mean.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": 58912.01920397836,
+              "predicted_change": 0.0,
+              "attributed_change": 0.0,
+              "prediction_remainder": 58912.01920397836,
+              "unexplained_remainder": 58912.01920397836,
+              "remainder_fraction": 1.0,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": 0.0,
+              "numerical_tolerance": 20.247442952651642,
+              "max_local_error": 0.0,
+              "elapsed_seconds": 0.007358417031355202,
+              "calculation_ref": "attribution-validation-mean.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 0,
+              "random_seed": 2026,
+              "status": "no_signal",
+              "stability_score": null,
+              "material_sign_agreement": null,
+              "mean_rank_correlation": null,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals.",
+                "No nonzero reference effects or no successful repeats; stability is undefined."
+              ],
+              "elapsed_seconds": 5.954195512458682e-05
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "strategy": "mean"
+                },
+                "status": "completed",
+                "validation_rmse": 1843.438512670587,
+                "signed_remainder": 58912.01920397836,
+                "elapsed_seconds": 0.018413749989122152,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit.",
+                "A complete bootstrap with enough repeats is required."
+              ],
+              "measurements": {
+                "normalized_rmse": 1.0000097284645808,
+                "residual_share": 1.0,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": null,
+                "validation_sign_agreement": null,
+                "completed_repeats": 0.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 1543.665298479329,
+            "predicted_change": -6445.459036270855,
+            "signed_remainder": 65357.47824024921,
+            "elapsed_seconds": 0.024777333019301295,
+            "stability_score": 0.940950630286855,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 0.001
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 1543.665298479329,
+              "mae": 491.7768683285961,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": -6445.459036270855,
+              "signed_remainder": 65357.47824024921,
+              "absolute_remainder": 65357.47824024921,
+              "remainder_fraction": 1.1094082179385831,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 0.8373918117486773
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "ridge",
+              "scope": "validation",
+              "method": "grouped_additive_delta_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 22567.44670475652,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ridge.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -29012.905741027877,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ridge.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": 58912.01920397836,
+              "predicted_change": -6445.459036270855,
+              "attributed_change": -6445.459036271357,
+              "prediction_remainder": 65357.47824024921,
+              "unexplained_remainder": 65357.478240249715,
+              "remainder_fraction": 1.1094082179385916,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": 5.020410753786564e-10,
+              "numerical_tolerance": 94.07686293528272,
+              "max_local_error": 1.8189894035458565e-12,
+              "elapsed_seconds": 0.006189000036101788,
+              "calculation_ref": "attribution-validation-ridge.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.940950630286855,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.7999999999999999,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 22567.44670475652,
+                  "mean_contribution": 22132.15849322333,
+                  "standard_deviation": 1711.5564538786161,
+                  "percentile_025": 19425.125645094548,
+                  "percentile_975": 24622.81313600545,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -29012.905741027877,
+                  "mean_contribution": -30334.280334460618,
+                  "standard_deviation": 5917.5866361262315,
+                  "percentile_025": -38746.653714649925,
+                  "percentile_975": -21822.189242767927,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.11665233300300315
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0
+                },
+                "status": "completed",
+                "validation_rmse": 1543.6662072749339,
+                "signed_remainder": 65357.311561436276,
+                "elapsed_seconds": 0.008666083042044193,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001
+                },
+                "status": "completed",
+                "validation_rmse": 1543.665298479329,
+                "signed_remainder": 65357.47824024921,
+                "elapsed_seconds": 0.008061499975156039,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1
+                },
+                "status": "completed",
+                "validation_rmse": 1543.6653884567472,
+                "signed_remainder": 65357.46172270004,
+                "elapsed_seconds": 0.008049750002101064,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.8373918117486773,
+                "residual_share": 1.1094082179385916,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": 0.940950630286855,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 1549.328336252432,
+            "predicted_change": 54427.124675019295,
+            "signed_remainder": 4484.894528959063,
+            "elapsed_seconds": 0.04345266695600003,
+            "stability_score": 0.89785582140564,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 0.001,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 1549.328336252432,
+              "mae": 473.6851431473278,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": 54427.124675019295,
+              "signed_remainder": 4484.894528959063,
+              "absolute_remainder": 4484.894528959063,
+              "remainder_fraction": 0.0761286845971186,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 0.8404638387389137
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "gam_spline",
+              "scope": "validation",
+              "method": "grouped_additive_delta_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 54655.99057133793,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_spline.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -228.86589632202595,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_spline.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": 58912.01920397836,
+              "predicted_change": 54427.12467501941,
+              "attributed_change": 54427.124675015904,
+              "prediction_remainder": 4484.8945289589465,
+              "unexplained_remainder": 4484.8945289624535,
+              "remainder_fraction": 0.07612868459717616,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": 3.5070115700364113e-09,
+              "numerical_tolerance": 100.71146132690555,
+              "max_local_error": 2.771685103652999e-10,
+              "elapsed_seconds": 0.009072625020053238,
+              "calculation_ref": "attribution-validation-gam_spline.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.89785582140564,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": null,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 54655.99057133793,
+                  "mean_contribution": 57555.15349326419,
+                  "standard_deviation": 8596.15897196103,
+                  "percentile_025": 45710.538203557175,
+                  "percentile_975": 67813.25133900747,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -228.86589632202595,
+                  "mean_contribution": -46.753251028963135,
+                  "standard_deviation": 5689.423992264052,
+                  "percentile_025": -6708.326768824524,
+                  "percentile_975": 10184.22606886616,
+                  "sign_agreement": 0.1,
+                  "is_material": false
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.18834445800166577
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1550.9783792074081,
+                "signed_remainder": 4001.900022267597,
+                "elapsed_seconds": 0.014771750022191554,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1549.328336252432,
+                "signed_remainder": 4484.894528959063,
+                "elapsed_seconds": 0.014204124978277832,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1550.967307332894,
+                "signed_remainder": 3991.2411884313915,
+                "elapsed_seconds": 0.014476791955530643,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.8404638387389137,
+                "residual_share": 0.07612868459717616,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": 0.89785582140564,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 484.2957395011961,
+            "predicted_change": 72581.01629388332,
+            "signed_remainder": -13668.997089904966,
+            "elapsed_seconds": 1.039958041976206,
+            "stability_score": 0.8990656466310936,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 2026,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 484.2957395011961,
+              "mae": 22.574847039916573,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": 72581.01629388332,
+              "signed_remainder": -13668.997089904966,
+              "absolute_remainder": 13668.997089904966,
+              "remainder_fraction": -0.23202391081821708,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 0.2627158148353638
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "xgboost",
+              "scope": "validation",
+              "method": "tree_path_dependent_pairs_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 42845.11892700195,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-xgboost.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -19967.431530952454,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-xgboost.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 49703.44369983673,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-xgboost.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 58912.01920397836,
+              "predicted_change": 72581.01629388332,
+              "attributed_change": 72581.13109588623,
+              "prediction_remainder": -13668.997089904966,
+              "unexplained_remainder": -13669.111891907873,
+              "remainder_fraction": -0.23202585952078164,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": -0.11480200290679932,
+              "numerical_tolerance": 160.8733174410305,
+              "max_local_error": 0.0477294921875,
+              "elapsed_seconds": 1.6640121249947697,
+              "calculation_ref": "attribution-validation-xgboost.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.8990656466310936,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.5,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 42845.11892700195,
+                  "mean_contribution": 46675.74137878418,
+                  "standard_deviation": 3535.0981678835687,
+                  "percentile_025": 43138.090574646,
+                  "percentile_975": 52504.091066741945,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 49703.44369983673,
+                  "mean_contribution": 41728.81975057125,
+                  "standard_deviation": 15735.726882450603,
+                  "percentile_025": 25721.09243786335,
+                  "percentile_975": 71579.42304046154,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -19967.431530952454,
+                  "mean_contribution": -22183.536366820335,
+                  "standard_deviation": 3792.766984676824,
+                  "percentile_025": -29064.225476109983,
+                  "percentile_975": -17334.43471364975,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 10.199830167053733
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "n_estimators": 300,
+                  "max_depth": 3,
+                  "learning_rate": 0.05,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 484.2957395011961,
+                "signed_remainder": -13668.997089904966,
+                "elapsed_seconds": 0.10542149998946115,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "n_estimators": 1500,
+                  "max_depth": 3,
+                  "learning_rate": 0.03,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 487.8484009645254,
+                "signed_remainder": -13095.564233017387,
+                "elapsed_seconds": 0.44472970796050504,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "n_estimators": 1200,
+                  "max_depth": 4,
+                  "learning_rate": 0.03,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 487.4142516239022,
+                "signed_remainder": -27772.206202444853,
+                "elapsed_seconds": 0.4898068340262398,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.2627158148353638,
+                "residual_share": 0.23202585952078164,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": 0.8990656466310936,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 149.13758805840786,
+            "predicted_change": 83818.15807728353,
+            "signed_remainder": -24906.13887330517,
+            "elapsed_seconds": 2.4846819159574807,
+            "stability_score": 0.757063139255597,
+            "is_selected": false,
+            "parameters": {
+              "interactions": 10,
+              "max_rounds": 10000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 2026,
+              "max_interaction_bins": 64
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 149.13758805840786,
+              "mae": 56.77806761593011,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": 83818.15807728353,
+              "signed_remainder": -24906.13887330517,
+              "absolute_remainder": 24906.13887330517,
+              "remainder_fraction": -0.42276837918370397,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 0.08090263814771527
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "ebm",
+              "scope": "validation",
+              "method": "grouped_ebm_terms_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 51098.41154606432,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": 3804.9551133393143,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 28914.79141788022,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 58912.01920397836,
+              "predicted_change": 83818.15807728353,
+              "attributed_change": 83818.15807728385,
+              "prediction_remainder": -24906.13887330517,
+              "unexplained_remainder": -24906.138873305492,
+              "remainder_fraction": -0.4227683791837094,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": -3.2014213502407074e-10,
+              "numerical_tolerance": 151.8385104931108,
+              "max_local_error": 1.4551915228366852e-11,
+              "elapsed_seconds": 0.0069202089798636734,
+              "calculation_ref": "attribution-validation-ebm.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.757063139255597,
+              "material_sign_agreement": 0.7999999999999999,
+              "mean_rank_correlation": 0.85,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 51098.41154606432,
+                  "mean_contribution": 54414.36641509606,
+                  "standard_deviation": 9097.822601297601,
+                  "percentile_025": 42746.37250943876,
+                  "percentile_975": 65343.53403076925,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 28914.79141788022,
+                  "mean_contribution": 6873.692213146349,
+                  "standard_deviation": 23423.88223215665,
+                  "percentile_025": -29055.35566796548,
+                  "percentile_975": 35715.08302007902,
+                  "sign_agreement": 0.5,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": 3804.9551133393143,
+                  "mean_contribution": 10981.491769793656,
+                  "standard_deviation": 12950.039026420534,
+                  "percentile_025": -4539.311287538605,
+                  "percentile_975": 36381.991406404595,
+                  "sign_agreement": 0.9,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals.",
+                "Attribution is below the configured reference stability threshold."
+              ],
+              "elapsed_seconds": 14.471556791977491
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "interactions": 5,
+                  "max_rounds": 2000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026
+                },
+                "status": "completed",
+                "validation_rmse": 178.44484310753361,
+                "signed_remainder": -27890.94548567373,
+                "elapsed_seconds": 1.360711082990747,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "interactions": 10,
+                  "max_rounds": 10000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "max_interaction_bins": 64
+                },
+                "status": "completed",
+                "validation_rmse": 149.13758805840786,
+                "signed_remainder": -24906.13887330517,
+                "elapsed_seconds": 0.6922528329887427,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "interactions": 10,
+                  "max_rounds": 5000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "max_interaction_bins": 32
+                },
+                "status": "completed",
+                "validation_rmse": 251.25353322939233,
+                "signed_remainder": -42597.65791252046,
+                "elapsed_seconds": 0.431717999977991,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Unexplained remainder exceeds the configured materiality limit.",
+                "Attribution is below the configured stability threshold.",
+                "Signs of material effects are not sufficiently consistent."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.08090263814771527,
+                "residual_share": 0.4227683791837094,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": 0.757063139255597,
+                "validation_sign_agreement": 0.7999999999999999,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "quadratic_ridge",
+            "status": "completed",
+            "validation_rmse": 0.00011708601487521751,
+            "predicted_change": 58912.00861195207,
+            "signed_remainder": 0.010592026286758482,
+            "elapsed_seconds": 0.025837625027634203,
+            "stability_score": 0.9878732943825363,
+            "is_selected": true,
+            "parameters": {
+              "alpha": 0.001,
+              "basis_degree": 2,
+              "maximum_terms": 2500
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 0.00011708601487521751,
+              "mae": 5.905233806887537e-05,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": 58912.00861195207,
+              "signed_remainder": 0.010592026286758482,
+              "absolute_remainder": 0.010592026286758482,
+              "remainder_fraction": 1.7979397803501526e-07,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 6.351562752843984e-08
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "quadratic_ridge",
+              "scope": "validation",
+              "method": "grouped_pairwise_basis_delta_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 23612.42059891767,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -24227.662868073112,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 59527.25088110505,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 58912.01920397836,
+              "predicted_change": 58912.00861195207,
+              "attributed_change": 58912.00861194961,
+              "prediction_remainder": 0.010592026286758482,
+              "unexplained_remainder": 0.010592028746032156,
+              "remainder_fraction": 1.7979401977986982e-07,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": 2.459273673593998e-09,
+              "numerical_tolerance": 145.59593799644682,
+              "max_local_error": 1.4551915228366852e-11,
+              "elapsed_seconds": 0.00840783299645409,
+              "calculation_ref": "attribution-validation-quadratic_ridge.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9878732943825363,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.8,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 23612.42059891767,
+                  "mean_contribution": 23645.38662839593,
+                  "standard_deviation": 224.6261018378317,
+                  "percentile_025": 23211.45634985726,
+                  "percentile_975": 23922.637240803273,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 59527.25088110505,
+                  "mean_contribution": 60003.06275221463,
+                  "standard_deviation": 1932.0782891459075,
+                  "percentile_025": 58494.5652701378,
+                  "percentile_975": 64067.43058782546,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -24227.662868073112,
+                  "mean_contribution": -24736.44060943317,
+                  "standard_deviation": 1951.4306688443453,
+                  "percentile_025": -28772.93821420342,
+                  "percentile_975": -22846.57177299344,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.1395027919788845
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.11707162865380356,
+                "signed_remainder": 10.59010165068321,
+                "elapsed_seconds": 0.008757125004194677,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.00011708601487521751,
+                "signed_remainder": 0.010592026286758482,
+                "elapsed_seconds": 0.00868408300448209,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.011708458921031908,
+                "signed_remainder": 1.05918363831006,
+                "elapsed_seconds": 0.008396417018957436,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "accepted",
+              "reasons": [],
+              "measurements": {
+                "normalized_rmse": 6.351562752843984e-08,
+                "residual_share": 1.7979401977986982e-07,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": 0.9878732943825363,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "gam_pairwise",
+            "status": "completed",
+            "validation_rmse": 0.18834925685982343,
+            "predicted_change": 58924.26796270453,
+            "signed_remainder": -12.248758726171218,
+            "elapsed_seconds": 0.08134662400698289,
+            "stability_score": 0.9871792850861707,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 0.1,
+              "basis_degree": 2,
+              "maximum_terms": 2500,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5773,
+              "rmse": 0.18834925685982343,
+              "mae": 0.006537132905404853,
+              "initial_value": -1023764.5852736465,
+              "final_value": -964852.5660696682,
+              "total_change": 58912.01920397836,
+              "predicted_change": 58924.26796270453,
+              "signed_remainder": -12.248758726171218,
+              "absolute_remainder": 12.248758726171218,
+              "remainder_fraction": -0.00020791612461560396,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "normalization_scale": 1843.4205790187766,
+              "normalized_rmse": 0.00010217378443289308
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "gam_pairwise",
+              "scope": "validation",
+              "method": "grouped_pairwise_basis_delta_v1",
+              "loan_count": 5773,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 23580.599009957863,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -24230.005597993004,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 59573.67455073152,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 58912.01920397836,
+              "predicted_change": 58924.267962704296,
+              "attributed_change": 58924.26796269638,
+              "prediction_remainder": -12.248758725938387,
+              "unexplained_remainder": -12.248758718022145,
+              "remainder_fraction": -0.00020791612447727782,
+              "remainder_denominator_floor": 1.0237645852736466,
+              "numerical_error": 7.916241884231567e-09,
+              "numerical_tolerance": 127.98327963548016,
+              "max_local_error": 1.4551915228366852e-11,
+              "elapsed_seconds": 0.019538833003025502,
+              "calculation_ref": "attribution-validation-gam_pairwise.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9871792850861707,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.75,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 23580.599009957863,
+                  "mean_contribution": 24113.703859413297,
+                  "standard_deviation": 679.5759996998295,
+                  "percentile_025": 23203.679759912593,
+                  "percentile_975": 25108.2587671526,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 59573.67455073152,
+                  "mean_contribution": 60066.79704594754,
+                  "standard_deviation": 1613.4623681372864,
+                  "percentile_025": 58609.175751692695,
+                  "percentile_975": 63411.533126147275,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -24230.005597993004,
+                  "mean_contribution": -24686.460471250844,
+                  "standard_deviation": 1843.2762519425469,
+                  "percentile_025": -28475.688550839863,
+                  "percentile_975": -22839.907821699137,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.38836608303245157
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 0.1,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 0.18834925685982343,
+                "signed_remainder": -12.248758726171218,
+                "elapsed_seconds": 0.031380666012410074,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 1.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 1.1021648578749659,
+                "signed_remainder": -17.62466994591523,
+                "elapsed_seconds": 0.024836249998770654,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 10.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 2.3292894889389992,
+                "signed_remainder": -0.39278874918818474,
+                "elapsed_seconds": 0.025129707995802164,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "accepted",
+              "reasons": [],
+              "measurements": {
+                "normalized_rmse": 0.00010217378443289308,
+                "residual_share": 0.00020791612447727782,
+                "residual_scale": 58912.01920397836,
+                "validation_stability_score": 0.9871792850861707,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          }
+        ],
+        "factor_contributions": [
+          {
+            "factor_name": "pd",
+            "contribution": 33204.926621268554,
+            "effect_type": "nonlinear",
+            "comment": "Change of this model's main term; not a causal effect or global importance.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\"]"
+          },
+          {
+            "factor_name": "volume",
+            "contribution": -135623.52388035122,
+            "effect_type": "nonlinear",
+            "comment": "Change of this model's main term; not a causal effect or global importance.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"volume\"]"
+          }
+        ],
+        "interactions": [
+          {
+            "factors": [
+              "pd",
+              "volume"
+            ],
+            "contribution": 153177.67215476884,
+            "description": "Non-overlapping pair term, counted once; model dependent.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+          }
+        ],
+        "unexplained_remainder": 0.05445754184620455,
+        "confidence_level": "medium",
+        "limitations": [
+          "Attributions describe a fitted model, not causal effects or global feature importance.",
+          "Portfolio effects include all input loans; validation and test metrics use held-out loans only.",
+          "One T0/T1 transition is not a multi-window temporal reliability assessment.",
+          "Prototype quality criteria are configurable research checks, not a bank risk certification.",
+          "Bootstrap measures training-sample sensitivity on validation only.",
+          "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+        ],
+        "protocol_version": "forward_grouped_hash_v2",
+        "selection_reason": "Lowest validation RMSE among candidates passing all validation quality criteria. Ties by model name. Test data do not select the model.",
+        "selection_status": "explanation_validated",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 5751,
+          "rmse": 0.0001165864804311295,
+          "mae": 5.9227001649565955e-05,
+          "initial_value": -932048.6322885726,
+          "final_value": -999562.6186069807,
+          "total_change": -67513.98631840805,
+          "predicted_change": -67513.99819251394,
+          "signed_remainder": 0.011874105897732079,
+          "absolute_remainder": 0.011874105897732079,
+          "remainder_fraction": 1.7587623758033885e-07,
+          "remainder_denominator_floor": 0.9995626186069806,
+          "normalization_scale": 1842.9980056542029,
+          "normalized_rmse": 6.325914627875313e-08
+        },
+        "dataset_sha256": "ab4185b5e794798dcc9b8072b8da4f7dacddf9ddfdbbfc4d9bbe21eceaf74a4a",
+        "attribution_version": "checked_model_delta_v2",
+        "portfolio_attribution": {
+          "model_name": "quadratic_ridge",
+          "scope": "portfolio",
+          "method": "grouped_pairwise_basis_delta_v1",
+          "loan_count": 29071,
+          "factor_contributions": [
+            {
+              "factor_name": "pd",
+              "contribution": 33204.926621268554,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\"]"
+            },
+            {
+              "factor_name": "volume",
+              "contribution": -135623.52388035122,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"volume\"]"
+            }
+          ],
+          "interactions": [
+            {
+              "factors": [
+                "pd",
+                "volume"
+              ],
+              "contribution": 153177.67215476884,
+              "description": "Non-overlapping pair term, counted once; model dependent.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+            }
+          ],
+          "observed_change": 50759.129353228025,
+          "predicted_change": 50759.074895733036,
+          "attributed_change": 50759.07489568618,
+          "prediction_remainder": 0.054457494989037514,
+          "unexplained_remainder": 0.05445754184620455,
+          "remainder_fraction": 1.0728620159585405e-06,
+          "remainder_denominator_floor": 5.031157785621965,
+          "numerical_error": 4.685716703534126e-08,
+          "numerical_tolerance": 737.6011834879662,
+          "max_local_error": 1.4551915228366852e-11,
+          "elapsed_seconds": 0.026896915980614722,
+          "calculation_ref": "attribution-portfolio-quadratic_ridge.csv"
+        },
+        "test_attribution": {
+          "model_name": "quadratic_ridge",
+          "scope": "test",
+          "method": "grouped_pairwise_basis_delta_v1",
+          "loan_count": 5751,
+          "factor_contributions": [
+            {
+              "factor_name": "pd",
+              "contribution": -0.014432374879106646,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"pd\"]"
+            },
+            {
+              "factor_name": "volume",
+              "contribution": -28702.735454022273,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"volume\"]"
+            }
+          ],
+          "interactions": [
+            {
+              "factors": [
+                "pd",
+                "volume"
+              ],
+              "contribution": -38811.24830611679,
+              "description": "Non-overlapping pair term, counted once; model dependent.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+            }
+          ],
+          "observed_change": -67513.98631840805,
+          "predicted_change": -67513.99819251394,
+          "attributed_change": -67513.99819251394,
+          "prediction_remainder": 0.011874105897732079,
+          "unexplained_remainder": 0.011874105897732079,
+          "remainder_fraction": 1.7587623758033885e-07,
+          "remainder_denominator_floor": 0.9995626186069806,
+          "numerical_error": 0.0,
+          "numerical_tolerance": 143.09779094202736,
+          "max_local_error": 1.4551915228366852e-11,
+          "elapsed_seconds": 0.006768167018890381,
+          "calculation_ref": "attribution-test-quadratic_ridge.csv"
+        },
+        "unexplained_fraction": 1.0728620159585405e-06,
+        "validation_reliability": {
+          "policy_version": "prototype_quality_v1",
+          "scope": "validation",
+          "status": "accepted",
+          "reasons": [],
+          "measurements": {
+            "normalized_rmse": 6.351562752843984e-08,
+            "residual_share": 1.7979401977986982e-07,
+            "residual_scale": 58912.01920397836,
+            "validation_stability_score": 0.9878732943825363,
+            "validation_sign_agreement": 1.0,
+            "completed_repeats": 10.0
+          },
+          "thresholds": {
+            "maximum_normalized_rmse": 0.15,
+            "maximum_residual_share": 0.15,
+            "relative_materiality": 0.01,
+            "minimum_stability": 0.85,
+            "minimum_sign_agreement": 0.9,
+            "minimum_repeats": 10.0
+          }
+        },
+        "test_reliability": {
+          "policy_version": "prototype_quality_v1",
+          "scope": "test",
+          "status": "accepted",
+          "reasons": [],
+          "measurements": {
+            "normalized_rmse": 6.325914627875313e-08,
+            "residual_share": 1.7587623758033885e-07,
+            "residual_scale": 67513.98631840805,
+            "validation_stability_score": 0.9878732943825363,
+            "validation_sign_agreement": 1.0,
+            "completed_repeats": 10.0
+          },
+          "thresholds": {
+            "maximum_normalized_rmse": 0.15,
+            "maximum_residual_share": 0.15,
+            "relative_materiality": 0.01,
+            "minimum_stability": 0.85,
+            "minimum_sign_agreement": 0.9,
+            "minimum_repeats": 10.0
+          }
+        }
+      }
+    },
+    {
+      "window": "2005-06-07",
+      "dataset_sha256": "f7f4d5f8abaa33cd63feb514a5374607ec21a54e3d8924a6f9dcec6b934663de",
+      "manifest_sha256": "a8afadea238e8a6c81070408259d6d4277c6a00a19620f98653b0740262f9a2e",
+      "analysis": {
+        "target_metric": "model_npv",
+        "initial_value": -5891669.516617002,
+        "final_value": -7809289.799353322,
+        "total_change": -1917620.28273632,
+        "selected_model": "quadratic_ridge",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 2172.048126841452,
+            "predicted_change": 0.0,
+            "signed_remainder": -438842.8361194036,
+            "elapsed_seconds": 0.008043415960855782,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 2172.048126841452,
+              "mae": 720.742948448285,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": 0.0,
+              "signed_remainder": -438842.8361194036,
+              "absolute_remainder": 438842.8361194036,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 1.0001077380461907
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "mean",
+              "scope": "validation",
+              "method": "constant_delta_v1",
+              "loan_count": 5775,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 0.0,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-mean.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": 0.0,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-mean.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": -438842.8361194036,
+              "predicted_change": 0.0,
+              "attributed_change": 0.0,
+              "prediction_remainder": -438842.8361194036,
+              "unexplained_remainder": -438842.8361194036,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "numerical_error": 0.0,
+              "numerical_tolerance": 24.224394057723785,
+              "max_local_error": 0.0,
+              "elapsed_seconds": 0.006377082958351821,
+              "calculation_ref": "attribution-validation-mean.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 0,
+              "random_seed": 2026,
+              "status": "no_signal",
+              "stability_score": null,
+              "material_sign_agreement": null,
+              "mean_rank_correlation": null,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals.",
+                "No nonzero reference effects or no successful repeats; stability is undefined."
+              ],
+              "elapsed_seconds": 5.83329820074141e-05
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "strategy": "mean"
+                },
+                "status": "completed",
+                "validation_rmse": 2172.048126841452,
+                "signed_remainder": -438842.8361194036,
+                "elapsed_seconds": 0.008043415960855782,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit.",
+                "A complete bootstrap with enough repeats is required."
+              ],
+              "measurements": {
+                "normalized_rmse": 1.0001077380461907,
+                "residual_share": 1.0,
+                "residual_scale": 438842.8361194036,
+                "validation_stability_score": null,
+                "validation_sign_agreement": null,
+                "completed_repeats": 0.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 1786.5527861102762,
+            "predicted_change": -429024.923949288,
+            "signed_remainder": -9817.912170115625,
+            "elapsed_seconds": 0.0228530410095118,
+            "stability_score": 0.9541519571054241,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 1786.5527861102762,
+              "mae": 635.259381121995,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": -429024.923949288,
+              "signed_remainder": -9817.912170115625,
+              "absolute_remainder": 9817.912170115625,
+              "remainder_fraction": -0.02237227399433791,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 0.8226085065689206
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "ridge",
+              "scope": "validation",
+              "method": "grouped_additive_delta_v1",
+              "loan_count": 5775,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -336570.5333580166,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ridge.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -92454.39059130073,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ridge.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": -438842.8361194036,
+              "predicted_change": -429024.923949288,
+              "attributed_change": -429024.9239493173,
+              "prediction_remainder": -9817.912170115625,
+              "unexplained_remainder": -9817.912170086289,
+              "remainder_fraction": -0.02237227399427106,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "numerical_error": 2.9336661100387573e-08,
+              "numerical_tolerance": 120.25575109775082,
+              "max_local_error": 1.8189894035458565e-12,
+              "elapsed_seconds": 0.006856249994598329,
+              "calculation_ref": "attribution-validation-ridge.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9541519571054241,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.9999999999999998,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -336570.5333580166,
+                  "mean_contribution": -352919.6984595625,
+                  "standard_deviation": 29591.300551239383,
+                  "percentile_025": -399408.33097308135,
+                  "percentile_975": -312385.35163351276,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -92454.39059130073,
+                  "mean_contribution": -101795.74594424327,
+                  "standard_deviation": 21785.960932386122,
+                  "percentile_025": -139324.97651186396,
+                  "percentile_975": -78826.83184841367,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.1213490410009399
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0
+                },
+                "status": "completed",
+                "validation_rmse": 1786.5527861102762,
+                "signed_remainder": -9817.912170115625,
+                "elapsed_seconds": 0.007510000024922192,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001
+                },
+                "status": "completed",
+                "validation_rmse": 1786.5532511090291,
+                "signed_remainder": -9793.764088074211,
+                "elapsed_seconds": 0.007530332950409502,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1
+                },
+                "status": "completed",
+                "validation_rmse": 1786.5532049003184,
+                "signed_remainder": -9796.157262587687,
+                "elapsed_seconds": 0.007812708034180105,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.8226085065689206,
+                "residual_share": 0.02237227399427106,
+                "residual_scale": 438842.8361194036,
+                "validation_stability_score": 0.9541519571054241,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 1812.1989150173376,
+            "predicted_change": -417991.12386015384,
+            "signed_remainder": -20851.71225924976,
+            "elapsed_seconds": 0.039795208955183625,
+            "stability_score": 0.8819693239609281,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 0.1,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 1812.1989150173376,
+              "mae": 639.8445918326199,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": -417991.12386015384,
+              "signed_remainder": -20851.71225924976,
+              "absolute_remainder": 20851.71225924976,
+              "remainder_fraction": -0.04751521625290078,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 0.8344171270382011
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "gam_spline",
+              "scope": "validation",
+              "method": "grouped_additive_delta_v1",
+              "loan_count": 5775,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -346755.9331946336,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_spline.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -71235.19066555791,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_spline.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": -438842.8361194036,
+              "predicted_change": -417991.12386015384,
+              "attributed_change": -417991.1238601915,
+              "prediction_remainder": -20851.71225924976,
+              "unexplained_remainder": -20851.7122592121,
+              "remainder_fraction": -0.04751521625281497,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "numerical_error": 3.766035661101341e-08,
+              "numerical_tolerance": 122.27521816234292,
+              "max_local_error": 4.547473508864641e-12,
+              "elapsed_seconds": 0.010213959030807018,
+              "calculation_ref": "attribution-validation-gam_spline.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.8819693239609281,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.9999999999999998,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -346755.9331946336,
+                  "mean_contribution": -341322.35045865306,
+                  "standard_deviation": 10107.77353058044,
+                  "percentile_025": -358316.5699047831,
+                  "percentile_975": -329004.2826346366,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -71235.19066555791,
+                  "mean_contribution": -168301.15096791825,
+                  "standard_deviation": 85627.45834619834,
+                  "percentile_025": -296477.29142290115,
+                  "percentile_975": -41058.41792315911,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.19821979099651799
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1818.9359934295803,
+                "signed_remainder": 25484.442609437974,
+                "elapsed_seconds": 0.013391416985541582,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 7268.141815232768,
+                "signed_remainder": -530388.2503308693,
+                "elapsed_seconds": 0.013447291974443942,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1812.1989150173376,
+                "signed_remainder": -20851.71225924976,
+                "elapsed_seconds": 0.0129564999951981,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.8344171270382011,
+                "residual_share": 0.04751521625281497,
+                "residual_scale": 438842.8361194036,
+                "validation_stability_score": 0.8819693239609281,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 466.52124261505423,
+            "predicted_change": -480605.93280906975,
+            "signed_remainder": 41763.096689666156,
+            "elapsed_seconds": 1.0276635010377504,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 1500,
+              "max_depth": 3,
+              "learning_rate": 0.03,
+              "n_jobs": 2,
+              "random_state": 2026,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 466.52124261505423,
+              "mae": 23.575038092626087,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": -480605.93280906975,
+              "signed_remainder": 41763.096689666156,
+              "absolute_remainder": 41763.096689666156,
+              "remainder_fraction": 0.09516640868281816,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 0.21480716699436989
+            },
+            "failure_reason": null,
+            "attribution": null,
+            "attribution_failure": "ValueError: Local attribution fails additivity; max error=0.1425018310546875",
+            "stability": null,
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "n_estimators": 300,
+                  "max_depth": 3,
+                  "learning_rate": 0.05,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 469.5268117080117,
+                "signed_remainder": 43210.24661518121,
+                "elapsed_seconds": 0.10291675000917166,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "n_estimators": 1500,
+                  "max_depth": 3,
+                  "learning_rate": 0.03,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 466.52124261505423,
+                "signed_remainder": 41763.096689666156,
+                "elapsed_seconds": 0.46379654202610254,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "n_estimators": 1200,
+                  "max_depth": 4,
+                  "learning_rate": 0.03,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 487.287593338253,
+                "signed_remainder": 43794.962823326234,
+                "elapsed_seconds": 0.4609502090024762,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Attribution failed: ValueError: Local attribution fails additivity; max error=0.1425018310546875",
+                "A complete bootstrap with enough repeats is required."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.21480716699436989,
+                "residual_share": null,
+                "residual_scale": null,
+                "validation_stability_score": null,
+                "validation_sign_agreement": null,
+                "completed_repeats": null
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 276.57720366072965,
+            "predicted_change": -452736.6458890954,
+            "signed_remainder": 13893.809769691783,
+            "elapsed_seconds": 1.3960010409355164,
+            "stability_score": 0.8815745077386097,
+            "is_selected": false,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 2026
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 276.57720366072965,
+              "mae": 41.72454283205822,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": -452736.6458890954,
+              "signed_remainder": 13893.809769691783,
+              "absolute_remainder": 13893.809769691783,
+              "remainder_fraction": 0.031660103859850755,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 0.12734846807953062
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "ebm",
+              "scope": "validation",
+              "method": "grouped_ebm_terms_v1",
+              "loan_count": 5775,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -334389.6552798645,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -80927.31797096081,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": -37419.67263826824,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": -438842.8361194036,
+              "predicted_change": -452736.6458890954,
+              "attributed_change": -452736.6458890935,
+              "prediction_remainder": 13893.809769691783,
+              "unexplained_remainder": 13893.80976968992,
+              "remainder_fraction": 0.031660103859846515,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "numerical_error": -1.862645149230957e-09,
+              "numerical_tolerance": 181.8096739063602,
+              "max_local_error": 7.275957614183426e-12,
+              "elapsed_seconds": 0.0076549999648705125,
+              "calculation_ref": "attribution-validation-ebm.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.8815745077386097,
+              "material_sign_agreement": 0.9666666666666667,
+              "mean_rank_correlation": 0.75,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -334389.6552798645,
+                  "mean_contribution": -309170.56646754604,
+                  "standard_deviation": 30258.80398969716,
+                  "percentile_025": -354199.4045877908,
+                  "percentile_975": -255085.69334366912,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": -37419.67263826824,
+                  "mean_contribution": -75314.43352624137,
+                  "standard_deviation": 54418.077572363945,
+                  "percentile_025": -167624.1377318159,
+                  "percentile_975": -3474.75761779393,
+                  "sign_agreement": 0.9,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -80927.31797096081,
+                  "mean_contribution": -97482.00342240036,
+                  "standard_deviation": 36074.99825140683,
+                  "percentile_025": -147297.55250274722,
+                  "percentile_975": -56450.36186996734,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 5.012448166962713
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "interactions": 5,
+                  "max_rounds": 2000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026
+                },
+                "status": "completed",
+                "validation_rmse": 276.57720366072965,
+                "signed_remainder": 13893.809769691783,
+                "elapsed_seconds": 0.4094787919893861,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "interactions": 10,
+                  "max_rounds": 10000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "max_interaction_bins": 64
+                },
+                "status": "completed",
+                "validation_rmse": 283.2945062224984,
+                "signed_remainder": 14299.104656685842,
+                "elapsed_seconds": 0.7337197079905309,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "interactions": 10,
+                  "max_rounds": 5000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "max_interaction_bins": 32
+                },
+                "status": "completed",
+                "validation_rmse": 350.2381611415343,
+                "signed_remainder": 11004.617223426583,
+                "elapsed_seconds": 0.2528025409555994,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "accepted",
+              "reasons": [],
+              "measurements": {
+                "normalized_rmse": 0.12734846807953062,
+                "residual_share": 0.031660103859846515,
+                "residual_scale": 438842.8361194036,
+                "validation_stability_score": 0.8815745077386097,
+                "validation_sign_agreement": 0.9666666666666667,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "quadratic_ridge",
+            "status": "completed",
+            "validation_rmse": 0.00015993644738133714,
+            "predicted_change": -438842.7807385819,
+            "signed_remainder": -0.05538082169368863,
+            "elapsed_seconds": 0.02652862505055964,
+            "stability_score": 0.9883153904487433,
+            "is_selected": true,
+            "parameters": {
+              "alpha": 0.001,
+              "basis_degree": 2,
+              "maximum_terms": 2500
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 0.00015993644738133714,
+              "mae": 8.34552332267202e-05,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": -438842.7807385819,
+              "signed_remainder": -0.05538082169368863,
+              "absolute_remainder": 0.05538082169368863,
+              "remainder_fraction": -1.2619739263242799e-07,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 7.364186669947045e-08
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "quadratic_ridge",
+              "scope": "validation",
+              "method": "grouped_pairwise_basis_delta_v1",
+              "loan_count": 5775,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -327332.8136220076,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -109202.8387320482,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": -2307.128384579446,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": -438842.8361194036,
+              "predicted_change": -438842.7807385819,
+              "attributed_change": -438842.7807386352,
+              "prediction_remainder": -0.05538082169368863,
+              "unexplained_remainder": -0.055380768375471234,
+              "remainder_fraction": -1.2619727113513329e-07,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "numerical_error": 5.3318217396736145e-08,
+              "numerical_tolerance": 190.87783338684233,
+              "max_local_error": 1.4551915228366852e-11,
+              "elapsed_seconds": 0.006956291967071593,
+              "calculation_ref": "attribution-validation-quadratic_ridge.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9883153904487433,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.9999999999999998,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -327332.8136220076,
+                  "mean_contribution": -327254.1504266235,
+                  "standard_deviation": 3521.9448755094504,
+                  "percentile_025": -332210.5328847113,
+                  "percentile_975": -322404.19100482337,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": -2307.128384579446,
+                  "mean_contribution": -1717.5806921127514,
+                  "standard_deviation": 5242.389167419503,
+                  "percentile_025": -8504.349240133235,
+                  "percentile_975": 5341.947165139762,
+                  "sign_agreement": 0.5,
+                  "is_material": false
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -109202.8387320482,
+                  "mean_contribution": -109871.0488753424,
+                  "standard_deviation": 4477.891781817313,
+                  "percentile_025": -117644.58738132742,
+                  "percentile_975": -103413.33005489253,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.14090187498368323
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.15991476368542915,
+                "signed_remainder": -55.37097555375658,
+                "elapsed_seconds": 0.009089291037525982,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.00015993644738133714,
+                "signed_remainder": -0.05538082169368863,
+                "elapsed_seconds": 0.008948999980930239,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.01599342953664158,
+                "signed_remainder": -5.537984376773238,
+                "elapsed_seconds": 0.00849033403210342,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "accepted",
+              "reasons": [],
+              "measurements": {
+                "normalized_rmse": 7.364186669947045e-08,
+                "residual_share": 1.2619727113513329e-07,
+                "residual_scale": 438842.8361194036,
+                "validation_stability_score": 0.9883153904487433,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "gam_pairwise",
+            "status": "completed",
+            "validation_rmse": 416.96564323063234,
+            "predicted_change": -470567.3031980172,
+            "signed_remainder": 31724.467078613583,
+            "elapsed_seconds": 0.07968183298362419,
+            "stability_score": 0.9785144479499353,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "basis_degree": 2,
+              "maximum_terms": 2500,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5775,
+              "rmse": 416.96564323063234,
+              "mae": 5.611713536809708,
+              "initial_value": -955912.9742786242,
+              "final_value": -1394755.8103980278,
+              "total_change": -438842.8361194036,
+              "predicted_change": -470567.3031980172,
+              "signed_remainder": 31724.467078613583,
+              "absolute_remainder": 31724.467078613583,
+              "remainder_fraction": 0.07229118141507443,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "normalization_scale": 2171.8141398293374,
+              "normalized_rmse": 0.19198956097753272
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "gam_pairwise",
+              "scope": "validation",
+              "method": "grouped_pairwise_basis_delta_v1",
+              "loan_count": 5775,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -326858.7987013096,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -118606.79252296127,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": -25101.71197371703,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": -438842.8361194036,
+              "predicted_change": -470567.30319801695,
+              "attributed_change": -470567.3031979879,
+              "prediction_remainder": 31724.46707861335,
+              "unexplained_remainder": 31724.467078584305,
+              "remainder_fraction": 0.07229118141500772,
+              "remainder_denominator_floor": 1.3947558103980278,
+              "numerical_error": -2.9045622795820236e-08,
+              "numerical_tolerance": 161.3473571715802,
+              "max_local_error": 1.4551915228366852e-11,
+              "elapsed_seconds": 0.020021459029521793,
+              "calculation_ref": "attribution-validation-gam_pairwise.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9785144479499353,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 1.0,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -326858.7987013096,
+                  "mean_contribution": -326472.9314397493,
+                  "standard_deviation": 3575.0305730071614,
+                  "percentile_025": -331732.81372668286,
+                  "percentile_975": -321565.9399371887,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": -25101.71197371703,
+                  "mean_contribution": -24903.709484180163,
+                  "standard_deviation": 5191.09513282799,
+                  "percentile_025": -31488.750536931784,
+                  "percentile_975": -16820.13314657698,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -118606.79252296127,
+                  "mean_contribution": -131197.45911319501,
+                  "standard_deviation": 13579.382244636743,
+                  "percentile_025": -153420.20328403643,
+                  "percentile_975": -115806.65591064082,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.40092370798811316
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 0.1,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 425.36198762149627,
+                "signed_remainder": 32376.570193895022,
+                "elapsed_seconds": 0.026610000000800937,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 1.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 416.96564323063234,
+                "signed_remainder": 31724.467078613583,
+                "elapsed_seconds": 0.02690524997888133,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 10.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 444.42042981214524,
+                "signed_remainder": 33709.11243270221,
+                "elapsed_seconds": 0.026166583003941923,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.19198956097753272,
+                "residual_share": 0.07229118141500772,
+                "residual_scale": 438842.8361194036,
+                "validation_stability_score": 0.9785144479499353,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          }
+        ],
+        "factor_contributions": [
+          {
+            "factor_name": "pd",
+            "contribution": -1662498.9022548907,
+            "effect_type": "nonlinear",
+            "comment": "Change of this model's main term; not a causal effect or global importance.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\"]"
+          },
+          {
+            "factor_name": "volume",
+            "contribution": -474809.1752312873,
+            "effect_type": "nonlinear",
+            "comment": "Change of this model's main term; not a causal effect or global importance.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"volume\"]"
+          }
+        ],
+        "interactions": [
+          {
+            "factors": [
+              "pd",
+              "volume"
+            ],
+            "contribution": 219688.0671768775,
+            "description": "Non-overlapping pair term, counted once; model dependent.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+          }
+        ],
+        "unexplained_remainder": -0.2724270196631551,
+        "confidence_level": "medium",
+        "limitations": [
+          "Attributions describe a fitted model, not causal effects or global feature importance.",
+          "Portfolio effects include all input loans; validation and test metrics use held-out loans only.",
+          "One T0/T1 transition is not a multi-window temporal reliability assessment.",
+          "Prototype quality criteria are configurable research checks, not a bank risk certification.",
+          "Bootstrap measures training-sample sensitivity on validation only.",
+          "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+        ],
+        "protocol_version": "forward_grouped_hash_v2",
+        "selection_reason": "Lowest validation RMSE among candidates passing all validation quality criteria. Ties by model name. Test data do not select the model.",
+        "selection_status": "explanation_validated",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 5745,
+          "rmse": 0.00015490389443095288,
+          "mae": 8.347711550929423e-05,
+          "initial_value": -1264418.551144295,
+          "final_value": -1496927.978756236,
+          "total_change": -232509.427611941,
+          "predicted_change": -232509.37907976238,
+          "signed_remainder": -0.04853217862546444,
+          "absolute_remainder": 0.04853217862546444,
+          "remainder_fraction": -2.087320893777469e-07,
+          "remainder_denominator_floor": 1.496927978756236,
+          "normalization_scale": 2188.299188387692,
+          "normalized_rmse": 7.07873472023192e-08
+        },
+        "dataset_sha256": "f7f4d5f8abaa33cd63feb514a5374607ec21a54e3d8924a6f9dcec6b934663de",
+        "attribution_version": "checked_model_delta_v2",
+        "portfolio_attribution": {
+          "model_name": "quadratic_ridge",
+          "scope": "portfolio",
+          "method": "grouped_pairwise_basis_delta_v1",
+          "loan_count": 29033,
+          "factor_contributions": [
+            {
+              "factor_name": "pd",
+              "contribution": -1662498.9022548907,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\"]"
+            },
+            {
+              "factor_name": "volume",
+              "contribution": -474809.1752312873,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"volume\"]"
+            }
+          ],
+          "interactions": [
+            {
+              "factors": [
+                "pd",
+                "volume"
+              ],
+              "contribution": 219688.0671768775,
+              "description": "Non-overlapping pair term, counted once; model dependent.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+            }
+          ],
+          "observed_change": -1917620.28273632,
+          "predicted_change": -1917620.0103101488,
+          "attributed_change": -1917620.0103093004,
+          "prediction_remainder": -0.2724261712282896,
+          "unexplained_remainder": -0.2724270196631551,
+          "remainder_fraction": -1.420651534173488e-07,
+          "remainder_denominator_floor": 7.809289799353322,
+          "numerical_error": -8.484348654747009e-07,
+          "numerical_tolerance": 976.4441294919793,
+          "max_local_error": 2.9103830456733704e-11,
+          "elapsed_seconds": 0.025011165998876095,
+          "calculation_ref": "attribution-portfolio-quadratic_ridge.csv"
+        },
+        "test_attribution": {
+          "model_name": "quadratic_ridge",
+          "scope": "test",
+          "method": "grouped_pairwise_basis_delta_v1",
+          "loan_count": 5745,
+          "factor_contributions": [
+            {
+              "factor_name": "pd",
+              "contribution": -271265.72519961203,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"pd\"]"
+            },
+            {
+              "factor_name": "volume",
+              "contribution": -92748.70960991428,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"volume\"]"
+            }
+          ],
+          "interactions": [
+            {
+              "factors": [
+                "pd",
+                "volume"
+              ],
+              "contribution": 131505.05572971684,
+              "description": "Non-overlapping pair term, counted once; model dependent.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+            }
+          ],
+          "observed_change": -232509.427611941,
+          "predicted_change": -232509.37907976238,
+          "attributed_change": -232509.37907980947,
+          "prediction_remainder": -0.04853217862546444,
+          "unexplained_remainder": -0.04853213153546676,
+          "remainder_fraction": -2.0873188684833479e-07,
+          "remainder_denominator_floor": 1.496927978756236,
+          "numerical_error": 4.708999767899513e-08,
+          "numerical_tolerance": 190.1559726505134,
+          "max_local_error": 7.275957614183426e-12,
+          "elapsed_seconds": 0.007152666978072375,
+          "calculation_ref": "attribution-test-quadratic_ridge.csv"
+        },
+        "unexplained_fraction": -1.420651534173488e-07,
+        "validation_reliability": {
+          "policy_version": "prototype_quality_v1",
+          "scope": "validation",
+          "status": "accepted",
+          "reasons": [],
+          "measurements": {
+            "normalized_rmse": 7.364186669947045e-08,
+            "residual_share": 1.2619727113513329e-07,
+            "residual_scale": 438842.8361194036,
+            "validation_stability_score": 0.9883153904487433,
+            "validation_sign_agreement": 1.0,
+            "completed_repeats": 10.0
+          },
+          "thresholds": {
+            "maximum_normalized_rmse": 0.15,
+            "maximum_residual_share": 0.15,
+            "relative_materiality": 0.01,
+            "minimum_stability": 0.85,
+            "minimum_sign_agreement": 0.9,
+            "minimum_repeats": 10.0
+          }
+        },
+        "test_reliability": {
+          "policy_version": "prototype_quality_v1",
+          "scope": "test",
+          "status": "accepted",
+          "reasons": [],
+          "measurements": {
+            "normalized_rmse": 7.07873472023192e-08,
+            "residual_share": 2.0873188684833479e-07,
+            "residual_scale": 232509.427611941,
+            "validation_stability_score": 0.9883153904487433,
+            "validation_sign_agreement": 1.0,
+            "completed_repeats": 10.0
+          },
+          "thresholds": {
+            "maximum_normalized_rmse": 0.15,
+            "maximum_residual_share": 0.15,
+            "relative_materiality": 0.01,
+            "minimum_stability": 0.85,
+            "minimum_sign_agreement": 0.9,
+            "minimum_repeats": 10.0
+          }
+        }
+      }
+    },
+    {
+      "window": "2005-08-09",
+      "dataset_sha256": "0a8c4790edf7fa796199a7561d1a4c154b8a5e9416f08c369c04c18129842b1e",
+      "manifest_sha256": "a3818c4af5a49ca9364569511b2ddbb09987a542403c4bacb0406af704c05005",
+      "analysis": {
+        "target_metric": "model_npv",
+        "initial_value": -9743964.739900589,
+        "final_value": -9724655.497214029,
+        "total_change": 19309.242686560377,
+        "selected_model": "quadratic_ridge",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 2347.3542964212256,
+            "predicted_change": 0.0,
+            "signed_remainder": 46703.772338307,
+            "elapsed_seconds": 0.007868833024986088,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 2347.3542964212256,
+              "mae": 877.9831643021838,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": 0.0,
+              "signed_remainder": 46703.772338307,
+              "absolute_remainder": 46703.772338307,
+              "remainder_fraction": 1.0,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 1.000137790148685
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "mean",
+              "scope": "validation",
+              "method": "constant_delta_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 0.0,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-mean.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": 0.0,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-mean.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": 46703.772338307,
+              "predicted_change": 0.0,
+              "attributed_change": 0.0,
+              "prediction_remainder": 46703.772338307,
+              "unexplained_remainder": 46703.772338307,
+              "remainder_fraction": 1.0,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": 0.0,
+              "numerical_tolerance": 40.26306306819962,
+              "max_local_error": 0.0,
+              "elapsed_seconds": 0.006685834028758109,
+              "calculation_ref": "attribution-validation-mean.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 0,
+              "random_seed": 2026,
+              "status": "no_signal",
+              "stability_score": null,
+              "material_sign_agreement": null,
+              "mean_rank_correlation": null,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals.",
+                "No nonzero reference effects or no successful repeats; stability is undefined."
+              ],
+              "elapsed_seconds": 3.612501313909888e-05
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "strategy": "mean"
+                },
+                "status": "completed",
+                "validation_rmse": 2347.3542964212256,
+                "signed_remainder": 46703.772338307,
+                "elapsed_seconds": 0.007868833024986088,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit.",
+                "A complete bootstrap with enough repeats is required."
+              ],
+              "measurements": {
+                "normalized_rmse": 1.000137790148685,
+                "residual_share": 1.0,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": null,
+                "validation_sign_agreement": null,
+                "completed_repeats": 0.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 1845.4991317350539,
+            "predicted_change": -3761.4608899015,
+            "signed_remainder": 50465.2332282085,
+            "elapsed_seconds": 0.023631373944226652,
+            "stability_score": 0.9418866068995868,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 1845.4991317350539,
+              "mae": 780.9052599771284,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": -3761.4608899015,
+              "signed_remainder": 50465.2332282085,
+              "absolute_remainder": 50465.2332282085,
+              "remainder_fraction": 1.080538695303983,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 0.7863122435964812
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "ridge",
+              "scope": "validation",
+              "method": "grouped_additive_delta_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 65976.45055266624,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ridge.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -69737.91144256786,
+                  "effect_type": "linear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ridge.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": 46703.772338307,
+              "predicted_change": -3761.4608899015,
+              "attributed_change": -3761.4608899016166,
+              "prediction_remainder": 50465.2332282085,
+              "unexplained_remainder": 50465.23322820861,
+              "remainder_fraction": 1.0805386953039855,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": 1.1641532182693481e-10,
+              "numerical_tolerance": 187.72781069455775,
+              "max_local_error": 1.8189894035458565e-12,
+              "elapsed_seconds": 0.006231832958292216,
+              "calculation_ref": "attribution-validation-ridge.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9418866068995868,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.0,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 65976.45055266624,
+                  "mean_contribution": 64737.67033479582,
+                  "standard_deviation": 5693.7202304173015,
+                  "percentile_025": 57067.580388525326,
+                  "percentile_975": 72535.3572182431,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -69737.91144256786,
+                  "mean_contribution": -65550.5287851194,
+                  "standard_deviation": 12613.987791881264,
+                  "percentile_025": -81199.68193664678,
+                  "percentile_975": -46737.55676225464,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.12703920801868662
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0
+                },
+                "status": "completed",
+                "validation_rmse": 1845.4991317350539,
+                "signed_remainder": 50465.2332282085,
+                "elapsed_seconds": 0.008056499995291233,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001
+                },
+                "status": "completed",
+                "validation_rmse": 1845.5063659199168,
+                "signed_remainder": 50465.26487281313,
+                "elapsed_seconds": 0.007866457977797836,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1
+                },
+                "status": "completed",
+                "validation_rmse": 1845.505648783852,
+                "signed_remainder": 50465.26173763117,
+                "elapsed_seconds": 0.007708415971137583,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.7863122435964812,
+                "residual_share": 1.0805386953039855,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": 0.9418866068995868,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 1894.4479602288793,
+            "predicted_change": -11140.370605930453,
+            "signed_remainder": 57844.14294423745,
+            "elapsed_seconds": 0.04037724994122982,
+            "stability_score": 0.46905511566911784,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 0.1,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 1894.4479602288793,
+              "mae": 736.1997180489278,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": -11140.370605930453,
+              "signed_remainder": 57844.14294423745,
+              "absolute_remainder": 57844.14294423745,
+              "remainder_fraction": 1.238532564890759,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 0.8071678823191143
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "gam_spline",
+              "scope": "validation",
+              "method": "grouped_additive_delta_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 60367.01411487219,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_spline.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -71507.38472080849,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_spline.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [],
+              "observed_change": 46703.772338307,
+              "predicted_change": -11140.370605930453,
+              "attributed_change": -11140.370605936303,
+              "prediction_remainder": 57844.14294423745,
+              "unexplained_remainder": 57844.1429442433,
+              "remainder_fraction": 1.2385325648908843,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": 5.8498699218034744e-09,
+              "numerical_tolerance": 173.1827472999625,
+              "max_local_error": 3.637978807091713e-12,
+              "elapsed_seconds": 0.0098667920101434,
+              "calculation_ref": "attribution-validation-gam_spline.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.46905511566911784,
+              "material_sign_agreement": 0.8,
+              "mean_rank_correlation": -0.39999999999999997,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 60367.01411487219,
+                  "mean_contribution": 56856.56618238943,
+                  "standard_deviation": 229036.35771369553,
+                  "percentile_025": -357960.0236343188,
+                  "percentile_975": 355193.8151546956,
+                  "sign_agreement": 0.7,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -71507.38472080849,
+                  "mean_contribution": -62177.0201597307,
+                  "standard_deviation": 98059.45595735507,
+                  "percentile_025": -138412.65137997232,
+                  "percentile_975": 142641.00219826514,
+                  "sign_agreement": 0.9,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals.",
+                "Unstable attribution: score is below the configured warning threshold."
+              ],
+              "elapsed_seconds": 0.19843070901697502
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1894.5004820753404,
+                "signed_remainder": 62052.1800389369,
+                "elapsed_seconds": 0.013258499966468662,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1894.492773433574,
+                "signed_remainder": 71272.3439046191,
+                "elapsed_seconds": 0.013545499998144805,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear",
+                  "interactions": false
+                },
+                "status": "completed",
+                "validation_rmse": 1894.4479602288793,
+                "signed_remainder": 57844.14294423745,
+                "elapsed_seconds": 0.013573249976616353,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Prediction error exceeds the configured normalized RMSE limit.",
+                "Unexplained remainder exceeds the configured materiality limit.",
+                "Attribution is below the configured stability threshold.",
+                "Signs of material effects are not sufficiently consistent."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.8071678823191143,
+                "residual_share": 1.2385325648908843,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": 0.46905511566911784,
+                "validation_sign_agreement": 0.8,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 136.88693292332104,
+            "predicted_change": 46200.77109232545,
+            "signed_remainder": 503.001245981548,
+            "elapsed_seconds": 1.002378457924351,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 1200,
+              "max_depth": 4,
+              "learning_rate": 0.03,
+              "n_jobs": 2,
+              "random_state": 2026,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 136.88693292332104,
+              "mae": 21.417393920517945,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": 46200.77109232545,
+              "signed_remainder": 503.001245981548,
+              "absolute_remainder": 503.001245981548,
+              "remainder_fraction": 0.010770034641698104,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 0.058323447296766424
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "xgboost",
+              "scope": "validation",
+              "method": "tree_path_dependent_pairs_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -45795.008544921875,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-xgboost.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -73521.84186220169,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-xgboost.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 165518.86409378052,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-xgboost.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 46703.772338307,
+              "predicted_change": 46200.77109232545,
+              "attributed_change": 46202.01368665695,
+              "prediction_remainder": 503.001245981548,
+              "unexplained_remainder": 501.75865165004507,
+              "remainder_fraction": 0.010743428775206164,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": -1.2425943315029144,
+              "numerical_tolerance": 271.21117886435036,
+              "max_local_error": 0.1683349609375,
+              "elapsed_seconds": 7.631295916042291,
+              "calculation_ref": "attribution-validation-xgboost.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 5,
+              "random_seed": 2026,
+              "status": "incomplete",
+              "stability_score": null,
+              "material_sign_agreement": null,
+              "mean_rank_correlation": null,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -45795.008544921875,
+                  "mean_contribution": 62011.08150024414,
+                  "standard_deviation": 77884.78240241224,
+                  "percentile_025": -56468.50916442871,
+                  "percentile_975": 126770.01347045899,
+                  "sign_agreement": 0.2,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 165518.86409378052,
+                  "mean_contribution": 107843.13224656582,
+                  "standard_deviation": 39407.95604133651,
+                  "percentile_025": 76160.9983528018,
+                  "percentile_975": 168001.36408405303,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -73521.84186220169,
+                  "mean_contribution": -74124.13556575775,
+                  "standard_deviation": 2384.999808018832,
+                  "percentile_025": -77450.59571700096,
+                  "percentile_975": -71892.71165452004,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [
+                "replicate 2: ValueError: Local attribution fails additivity; max error=0.542877197265625",
+                "replicate 3: ValueError: Local attribution fails additivity; max error=0.206268310546875",
+                "replicate 7: ValueError: Local attribution fails additivity; max error=0.405975341796875",
+                "replicate 8: ValueError: Local attribution fails additivity; max error=0.3951416015625",
+                "replicate 9: ValueError: Local attribution fails additivity; max error=0.361053466796875"
+              ],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals.",
+                "Some repeats failed; aggregate stability score is withheld."
+              ],
+              "elapsed_seconds": 80.10917441599304
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "n_estimators": 300,
+                  "max_depth": 3,
+                  "learning_rate": 0.05,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 186.83563615069247,
+                "signed_remainder": 42993.0767935873,
+                "elapsed_seconds": 0.10719233297277242,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "n_estimators": 1500,
+                  "max_depth": 3,
+                  "learning_rate": 0.03,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 181.49571794780772,
+                "signed_remainder": 40019.22606503079,
+                "elapsed_seconds": 0.443069499975536,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "n_estimators": 1200,
+                  "max_depth": 4,
+                  "learning_rate": 0.03,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "tree_method": "hist",
+                  "objective": "reg:squarederror"
+                },
+                "status": "completed",
+                "validation_rmse": 136.88693292332104,
+                "signed_remainder": 503.001245981548,
+                "elapsed_seconds": 0.45211662497604266,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "incomplete",
+              "reasons": [
+                "A complete bootstrap with enough repeats is required."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.058323447296766424,
+                "residual_share": 0.010743428775206164,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": null,
+                "validation_sign_agreement": null,
+                "completed_repeats": 5.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 338.40549133370496,
+            "predicted_change": -9119.06380586233,
+            "signed_remainder": 55822.83614416933,
+            "elapsed_seconds": 2.1904547919984907,
+            "stability_score": 0.9077109276656838,
+            "is_selected": false,
+            "parameters": {
+              "interactions": 10,
+              "max_rounds": 10000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 2026,
+              "max_interaction_bins": 64
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 338.40549133370496,
+              "mae": 92.51957804158324,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": -9119.06380586233,
+              "signed_remainder": 55822.83614416933,
+              "absolute_remainder": 55822.83614416933,
+              "remainder_fraction": 1.1952532600537444,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 0.14418450627273244
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "ebm",
+              "scope": "validation",
+              "method": "grouped_ebm_terms_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": -224872.01174213135,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -32964.26113428769,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 248717.20907058232,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-ebm.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 46703.772338307,
+              "predicted_change": -9119.06380586233,
+              "attributed_change": -9119.063805836719,
+              "prediction_remainder": 55822.83614416933,
+              "unexplained_remainder": 55822.836144143716,
+              "remainder_fraction": 1.195253260053196,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": -2.561137080192566e-08,
+              "numerical_tolerance": 265.2853914882145,
+              "max_local_error": 7.275957614183426e-12,
+              "elapsed_seconds": 0.007486749964300543,
+              "calculation_ref": "attribution-validation-ebm.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9077109276656838,
+              "material_sign_agreement": 0.9666666666666667,
+              "mean_rank_correlation": 0.7,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": -224872.01174213135,
+                  "mean_contribution": -212715.18196755796,
+                  "standard_deviation": 12412.133991655168,
+                  "percentile_025": -231861.09198184125,
+                  "percentile_975": -195060.34618244218,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 248717.20907058232,
+                  "mean_contribution": 196600.09789683632,
+                  "standard_deviation": 48275.680066321685,
+                  "percentile_025": 125233.69396285387,
+                  "percentile_975": 263811.01981880865,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -32964.26113428769,
+                  "mean_contribution": -31211.528855277535,
+                  "standard_deviation": 17945.297830570868,
+                  "percentile_025": -59429.628529070396,
+                  "percentile_975": -3538.2880362996298,
+                  "sign_agreement": 0.9,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 10.266692125005648
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "interactions": 5,
+                  "max_rounds": 2000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026
+                },
+                "status": "completed",
+                "validation_rmse": 347.4398952822634,
+                "signed_remainder": 31992.4457044804,
+                "elapsed_seconds": 0.47446100000524893,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "interactions": 10,
+                  "max_rounds": 10000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "max_interaction_bins": 64
+                },
+                "status": "completed",
+                "validation_rmse": 338.40549133370496,
+                "signed_remainder": 55822.83614416933,
+                "elapsed_seconds": 1.2495749589870684,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "interactions": 10,
+                  "max_rounds": 5000,
+                  "outer_bags": 4,
+                  "n_jobs": 2,
+                  "random_state": 2026,
+                  "max_interaction_bins": 32
+                },
+                "status": "completed",
+                "validation_rmse": 507.43575588682234,
+                "signed_remainder": 108013.84318103315,
+                "elapsed_seconds": 0.4664188330061734,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "rejected",
+              "reasons": [
+                "Unexplained remainder exceeds the configured materiality limit."
+              ],
+              "measurements": {
+                "normalized_rmse": 0.14418450627273244,
+                "residual_share": 1.195253260053196,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": 0.9077109276656838,
+                "validation_sign_agreement": 0.9666666666666667,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "quadratic_ridge",
+            "status": "completed",
+            "validation_rmse": 0.00016453154711041235,
+            "predicted_change": 46703.785305942874,
+            "signed_remainder": -0.012967635877430439,
+            "elapsed_seconds": 0.026660040952265263,
+            "stability_score": 0.9870853832621581,
+            "is_selected": true,
+            "parameters": {
+              "alpha": 0.001,
+              "basis_degree": 2,
+              "maximum_terms": 2500
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 0.00016453154711041235,
+              "mae": 9.127093609411837e-05,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": 46703.785305942874,
+              "signed_remainder": -0.012967635877430439,
+              "absolute_remainder": 0.012967635877430439,
+              "remainder_fraction": -2.7765714048743396e-07,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 7.010199448273799e-08
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "quadratic_ridge",
+              "scope": "validation",
+              "method": "grouped_pairwise_basis_delta_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 56701.41970541773,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -68787.29096415803,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 58789.65656468519,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 46703.772338307,
+              "predicted_change": 46703.785305942874,
+              "attributed_change": 46703.78530594488,
+              "prediction_remainder": -0.012967635877430439,
+              "unexplained_remainder": -0.01296763788559474,
+              "remainder_fraction": -2.776571834853376e-07,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": -2.0081643015146255e-09,
+              "numerical_tolerance": 257.46634966434374,
+              "max_local_error": 1.4551915228366852e-11,
+              "elapsed_seconds": 0.007156708976253867,
+              "calculation_ref": "attribution-validation-quadratic_ridge.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9870853832621581,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.9,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 56701.41970541773,
+                  "mean_contribution": 56394.79686365387,
+                  "standard_deviation": 616.8878887787389,
+                  "percentile_025": 55434.56013372652,
+                  "percentile_975": 57282.33802010909,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 58789.65656468519,
+                  "mean_contribution": 58671.03217355085,
+                  "standard_deviation": 2949.6777810097096,
+                  "percentile_025": 54165.25426726794,
+                  "percentile_975": 63328.139665378454,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -68787.29096415803,
+                  "mean_contribution": -68362.04393706174,
+                  "standard_deviation": 2779.6215453897917,
+                  "percentile_025": -72949.53763065841,
+                  "percentile_975": -63988.131384822205,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.14260604203445837
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 1.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.16450979459813805,
+                "signed_remainder": -12.965398700209334,
+                "elapsed_seconds": 0.008630124968476593,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 0.001,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.00016453154711041235,
+                "signed_remainder": -0.012967635877430439,
+                "elapsed_seconds": 0.009192208002787083,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 0.1,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500
+                },
+                "status": "completed",
+                "validation_rmse": 0.016452937907868375,
+                "signed_remainder": -1.2967411915306002,
+                "elapsed_seconds": 0.008837707981001586,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "accepted",
+              "reasons": [],
+              "measurements": {
+                "normalized_rmse": 7.010199448273799e-08,
+                "residual_share": 2.776571834853376e-07,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": 0.9870853832621581,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          },
+          {
+            "model_name": "gam_pairwise",
+            "status": "completed",
+            "validation_rmse": 1.8797317770518995,
+            "predicted_change": 47869.138443548465,
+            "signed_remainder": -1165.3661052414682,
+            "elapsed_seconds": 0.08455904200673103,
+            "stability_score": 0.9645119487252828,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 0.1,
+              "basis_degree": 2,
+              "maximum_terms": 2500,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 5795,
+              "rmse": 1.8797317770518995,
+              "mae": 0.23977085425375058,
+              "initial_value": -1833484.0016915603,
+              "final_value": -1786780.2293532533,
+              "total_change": 46703.772338307,
+              "predicted_change": 47869.138443548465,
+              "signed_remainder": -1165.3661052414682,
+              "absolute_remainder": 1165.3661052414682,
+              "remainder_fraction": -0.024952290722897792,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "normalization_scale": 2347.0308986847276,
+              "normalized_rmse": 0.0008008977547356953
+            },
+            "failure_reason": null,
+            "attribution": {
+              "model_name": "gam_pairwise",
+              "scope": "validation",
+              "method": "grouped_pairwise_basis_delta_v1",
+              "loan_count": 5795,
+              "factor_contributions": [
+                {
+                  "factor_name": "pd",
+                  "contribution": 58828.6559769935,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"pd\"]"
+                },
+                {
+                  "factor_name": "volume",
+                  "contribution": -69590.9854842117,
+                  "effect_type": "nonlinear",
+                  "comment": "Change of this model's main term; not a causal effect or global importance.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"volume\"]"
+                }
+              ],
+              "interactions": [
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "contribution": 58631.46795077459,
+                  "description": "Non-overlapping pair term, counted once; model dependent.",
+                  "calculation_ref": "attribution-validation-gam_pairwise.csv#[\"pd\", \"volume\"]"
+                }
+              ],
+              "observed_change": 46703.772338307,
+              "predicted_change": 47869.138443548465,
+              "attributed_change": 47869.13844355638,
+              "prediction_remainder": -1165.3661052414682,
+              "unexplained_remainder": -1165.3661052493844,
+              "remainder_fraction": -0.024952290723067292,
+              "remainder_denominator_floor": 1.8334840016915601,
+              "numerical_error": -7.916241884231567e-09,
+              "numerical_tolerance": 210.8777689256985,
+              "max_local_error": 2.1827872842550278e-11,
+              "elapsed_seconds": 0.021424332982860506,
+              "calculation_ref": "attribution-validation-gam_pairwise.csv"
+            },
+            "attribution_failure": null,
+            "stability": {
+              "method": "training_loan_bootstrap_l1_v1",
+              "scope": "validation",
+              "requested_repeats": 10,
+              "completed_repeats": 10,
+              "random_seed": 2026,
+              "status": "completed",
+              "stability_score": 0.9645119487252828,
+              "material_sign_agreement": 1.0,
+              "mean_rank_correlation": 0.65,
+              "material_fraction": 0.01,
+              "warning_threshold": 0.7,
+              "reference_threshold": 0.85,
+              "term_statistics": [
+                {
+                  "factors": [
+                    "pd"
+                  ],
+                  "reference_contribution": 58828.6559769935,
+                  "mean_contribution": 55031.2040823251,
+                  "standard_deviation": 5683.9218100792095,
+                  "percentile_025": 46650.12969646263,
+                  "percentile_975": 64684.097692842224,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "pd",
+                    "volume"
+                  ],
+                  "reference_contribution": 58631.46795077459,
+                  "mean_contribution": 61675.68119370771,
+                  "standard_deviation": 5383.196548277936,
+                  "percentile_025": 53810.07520775371,
+                  "percentile_975": 67914.50897362034,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                },
+                {
+                  "factors": [
+                    "volume"
+                  ],
+                  "reference_contribution": -69590.9854842117,
+                  "mean_contribution": -70448.39738674139,
+                  "standard_deviation": 3415.9456736410802,
+                  "percentile_025": -75580.60866496609,
+                  "percentile_975": -65057.90527599286,
+                  "sign_agreement": 1.0,
+                  "is_material": true
+                }
+              ],
+              "failures": [],
+              "warnings": [
+                "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+              ],
+              "elapsed_seconds": 0.40467224997701123
+            },
+            "tuning_trials": [
+              {
+                "profile": 0,
+                "parameters": {
+                  "alpha": 0.1,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 1.8797317770518995,
+                "signed_remainder": -1165.3661052414682,
+                "elapsed_seconds": 0.031237000017426908,
+                "failure_reason": null
+              },
+              {
+                "profile": 1,
+                "parameters": {
+                  "alpha": 1.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 4.59908935109949,
+                "signed_remainder": -5300.493920026347,
+                "elapsed_seconds": 0.02705470798537135,
+                "failure_reason": null
+              },
+              {
+                "profile": 2,
+                "parameters": {
+                  "alpha": 10.0,
+                  "basis_degree": 2,
+                  "maximum_terms": 2500,
+                  "n_knots": 6,
+                  "degree": 3,
+                  "knots": "uniform",
+                  "extrapolation": "linear"
+                },
+                "status": "completed",
+                "validation_rmse": 20.26877405352406,
+                "signed_remainder": -34397.23633067659,
+                "elapsed_seconds": 0.026267334003932774,
+                "failure_reason": null
+              }
+            ],
+            "reliability": {
+              "policy_version": "prototype_quality_v1",
+              "scope": "validation",
+              "status": "accepted",
+              "reasons": [],
+              "measurements": {
+                "normalized_rmse": 0.0008008977547356953,
+                "residual_share": 0.024952290723067292,
+                "residual_scale": 46703.772338307,
+                "validation_stability_score": 0.9645119487252828,
+                "validation_sign_agreement": 1.0,
+                "completed_repeats": 10.0
+              },
+              "thresholds": {
+                "maximum_normalized_rmse": 0.15,
+                "maximum_residual_share": 0.15,
+                "relative_materiality": 0.01,
+                "minimum_stability": 0.85,
+                "minimum_sign_agreement": 0.9,
+                "minimum_repeats": 10.0
+              }
+            }
+          }
+        ],
+        "factor_contributions": [
+          {
+            "factor_name": "pd",
+            "contribution": 690698.0002916956,
+            "effect_type": "nonlinear",
+            "comment": "Change of this model's main term; not a causal effect or global importance.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\"]"
+          },
+          {
+            "factor_name": "volume",
+            "contribution": -382141.40051073616,
+            "effect_type": "nonlinear",
+            "comment": "Change of this model's main term; not a causal effect or global importance.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"volume\"]"
+          }
+        ],
+        "interactions": [
+          {
+            "factors": [
+              "pd",
+              "volume"
+            ],
+            "contribution": -289247.2570306859,
+            "description": "Non-overlapping pair term, counted once; model dependent.",
+            "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+          }
+        ],
+        "unexplained_remainder": -0.10006371315103024,
+        "confidence_level": "medium",
+        "limitations": [
+          "Attributions describe a fitted model, not causal effects or global feature importance.",
+          "Portfolio effects include all input loans; validation and test metrics use held-out loans only.",
+          "One T0/T1 transition is not a multi-window temporal reliability assessment.",
+          "Prototype quality criteria are configurable research checks, not a bank risk certification.",
+          "Bootstrap measures training-sample sensitivity on validation only.",
+          "Exploratory training bootstrap; percentiles are not calibrated confidence intervals."
+        ],
+        "protocol_version": "forward_grouped_hash_v2",
+        "selection_reason": "Lowest validation RMSE among candidates passing all validation quality criteria. Ties by model name. Test data do not select the model.",
+        "selection_status": "explanation_validated",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 5741,
+          "rmse": 0.00015868386201275099,
+          "mae": 8.917289280921773e-05,
+          "initial_value": -1825874.9732835996,
+          "final_value": -1591064.064477631,
+          "total_change": 234810.9088059687,
+          "predicted_change": 234810.92333645117,
+          "signed_remainder": -0.014530482469126582,
+          "absolute_remainder": 0.014530482469126582,
+          "remainder_fraction": -6.188163294037398e-08,
+          "remainder_denominator_floor": 1.8258749732835995,
+          "normalization_scale": 2230.009344205288,
+          "normalized_rmse": 7.115838434717474e-08
+        },
+        "dataset_sha256": "0a8c4790edf7fa796199a7561d1a4c154b8a5e9416f08c369c04c18129842b1e",
+        "attribution_version": "checked_model_delta_v2",
+        "portfolio_attribution": {
+          "model_name": "quadratic_ridge",
+          "scope": "portfolio",
+          "method": "grouped_pairwise_basis_delta_v1",
+          "loan_count": 29056,
+          "factor_contributions": [
+            {
+              "factor_name": "pd",
+              "contribution": 690698.0002916956,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\"]"
+            },
+            {
+              "factor_name": "volume",
+              "contribution": -382141.40051073616,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"volume\"]"
+            }
+          ],
+          "interactions": [
+            {
+              "factors": [
+                "pd",
+                "volume"
+              ],
+              "contribution": -289247.2570306859,
+              "description": "Non-overlapping pair term, counted once; model dependent.",
+              "calculation_ref": "attribution-portfolio-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+            }
+          ],
+          "observed_change": 19309.242686560377,
+          "predicted_change": 19309.34275073372,
+          "attributed_change": 19309.34275027353,
+          "prediction_remainder": -0.10006417334079742,
+          "unexplained_remainder": -0.10006371315103024,
+          "remainder_fraction": -5.182166632598005e-06,
+          "remainder_denominator_floor": 9.743964739900589,
+          "numerical_error": 4.601897671818733e-07,
+          "numerical_tolerance": 1305.579107277112,
+          "max_local_error": 2.9103830456733704e-11,
+          "elapsed_seconds": 0.025337083032354712,
+          "calculation_ref": "attribution-portfolio-quadratic_ridge.csv"
+        },
+        "test_attribution": {
+          "model_name": "quadratic_ridge",
+          "scope": "test",
+          "method": "grouped_pairwise_basis_delta_v1",
+          "loan_count": 5741,
+          "factor_contributions": [
+            {
+              "factor_name": "pd",
+              "contribution": 227740.2915769504,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"pd\"]"
+            },
+            {
+              "factor_name": "volume",
+              "contribution": -74629.04675929368,
+              "effect_type": "nonlinear",
+              "comment": "Change of this model's main term; not a causal effect or global importance.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"volume\"]"
+            }
+          ],
+          "interactions": [
+            {
+              "factors": [
+                "pd",
+                "volume"
+              ],
+              "contribution": 81699.67851883141,
+              "description": "Non-overlapping pair term, counted once; model dependent.",
+              "calculation_ref": "attribution-test-quadratic_ridge.csv#[\"pd\", \"volume\"]"
+            }
+          ],
+          "observed_change": 234810.9088059687,
+          "predicted_change": 234810.92333645117,
+          "attributed_change": 234810.92333648814,
+          "prediction_remainder": -0.014530482469126582,
+          "unexplained_remainder": -0.014530519430991262,
+          "remainder_fraction": -6.18817903515644e-08,
+          "remainder_denominator_floor": 1.8258749732835995,
+          "numerical_error": -3.6961864680051804e-08,
+          "numerical_tolerance": 250.6700245006192,
+          "max_local_error": 1.4551915228366852e-11,
+          "elapsed_seconds": 0.0077006249921396375,
+          "calculation_ref": "attribution-test-quadratic_ridge.csv"
+        },
+        "unexplained_fraction": -5.182166632598005e-06,
+        "validation_reliability": {
+          "policy_version": "prototype_quality_v1",
+          "scope": "validation",
+          "status": "accepted",
+          "reasons": [],
+          "measurements": {
+            "normalized_rmse": 7.010199448273799e-08,
+            "residual_share": 2.776571834853376e-07,
+            "residual_scale": 46703.772338307,
+            "validation_stability_score": 0.9870853832621581,
+            "validation_sign_agreement": 1.0,
+            "completed_repeats": 10.0
+          },
+          "thresholds": {
+            "maximum_normalized_rmse": 0.15,
+            "maximum_residual_share": 0.15,
+            "relative_materiality": 0.01,
+            "minimum_stability": 0.85,
+            "minimum_sign_agreement": 0.9,
+            "minimum_repeats": 10.0
+          }
+        },
+        "test_reliability": {
+          "policy_version": "prototype_quality_v1",
+          "scope": "test",
+          "status": "accepted",
+          "reasons": [],
+          "measurements": {
+            "normalized_rmse": 7.115838434717474e-08,
+            "residual_share": 6.18817903515644e-08,
+            "residual_scale": 234810.9088059687,
+            "validation_stability_score": 0.9870853832621581,
+            "validation_sign_agreement": 1.0,
+            "completed_repeats": 10.0
+          },
+          "thresholds": {
+            "maximum_normalized_rmse": 0.15,
+            "maximum_residual_share": 0.15,
+            "relative_materiality": 0.01,
+            "minimum_stability": 0.85,
+            "minimum_sign_agreement": 0.9,
+            "minimum_repeats": 10.0
+          }
+        }
+      }
+    }
+  ],
+  "limitation": "Observed panel with assumed model_npv; not default prediction or observed bank NPV."
+}

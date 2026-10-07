@@ -1,0 +1,1611 @@
+{
+  "created_at": "2026-09-29T18:30:10.807112+00:00",
+  "protocol_version": "forward_grouped_v1",
+  "sample_count": 1500,
+  "seed": 42,
+  "advanced": true,
+  "elapsed_seconds": 29.84037570800865,
+  "artifact_directory": "data/experiments/forward-v1",
+  "scenarios": [
+    {
+      "scenario": "credit",
+      "dataset_sha256": "f87b9d1636407b8bb16b5c9b3cc80c0f6e7fe0c1fae921a606feb37743ea5745",
+      "truth_sha256": "b4a5322c5ea46799e91e9144dc2675fd0b27abf3f8c1480567d2f165b11e3819",
+      "manifest_sha256": "a7348afb77ef491f5889604dbdab9cccd1e1ca8b32aac42063f39c9683fa502e",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 210939.7475,
+        "final_value": 186781.73729999998,
+        "total_change": -24158.01020000002,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 73.37592628275824,
+            "predicted_change": 0.0,
+            "signed_remainder": -4589.611600000004,
+            "elapsed_seconds": 0.01206345803802833,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 73.37592628275824,
+              "mae": 62.82428038,
+              "initial_value": 42761.8302,
+              "final_value": 38172.21859999999,
+              "total_change": -4589.611600000004,
+              "predicted_change": 0.0,
+              "signed_remainder": -4589.611600000004,
+              "absolute_remainder": 4589.611600000004,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.042761830199999996
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 25.838660224190374,
+            "predicted_change": -3726.1190324133495,
+            "signed_remainder": -863.4925675866543,
+            "elapsed_seconds": 0.0041716250125318766,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 25.838660224190374,
+              "mae": 17.685713471999854,
+              "initial_value": 42761.8302,
+              "final_value": 38172.21859999999,
+              "total_change": -4589.611600000004,
+              "predicted_change": -3726.1190324133495,
+              "signed_remainder": -863.4925675866543,
+              "absolute_remainder": 863.4925675866543,
+              "remainder_fraction": -0.1881406626187396,
+              "remainder_denominator_floor": 0.042761830199999996
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 20.883840998125187,
+            "predicted_change": -4186.521676992503,
+            "signed_remainder": -403.08992300750106,
+            "elapsed_seconds": 0.009744875016622245,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 20.883840998125187,
+              "mae": 13.951576046135788,
+              "initial_value": 42761.8302,
+              "final_value": 38172.21859999999,
+              "total_change": -4589.611600000004,
+              "predicted_change": -4186.521676992503,
+              "signed_remainder": -403.08992300750106,
+              "absolute_remainder": 403.08992300750106,
+              "remainder_fraction": -0.08782658711414724,
+              "remainder_denominator_floor": 0.042761830199999996
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 14.627697455954227,
+            "predicted_change": -3250.1078889369965,
+            "signed_remainder": -1339.5037110630074,
+            "elapsed_seconds": 0.07681250001769513,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 14.627697455954227,
+              "mae": 8.599210269664763,
+              "initial_value": 42761.8302,
+              "final_value": 38172.21859999999,
+              "total_change": -4589.611600000004,
+              "predicted_change": -3250.1078889369965,
+              "signed_remainder": -1339.5037110630074,
+              "absolute_remainder": 1339.5037110630074,
+              "remainder_fraction": -0.29185557031950293,
+              "remainder_denominator_floor": 0.042761830199999996
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 11.570371534493937,
+            "predicted_change": -3790.296476098578,
+            "signed_remainder": -799.315123901426,
+            "elapsed_seconds": 6.366471291985363,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 11.570371534493937,
+              "mae": 5.910928033746868,
+              "initial_value": 42761.8302,
+              "final_value": 38172.21859999999,
+              "total_change": -4589.611600000004,
+              "predicted_change": -3790.296476098578,
+              "signed_remainder": -799.315123901426,
+              "absolute_remainder": 799.315123901426,
+              "remainder_fraction": -0.1741574655034917,
+              "remainder_denominator_floor": 0.042761830199999996
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -24158.01020000002,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 9.516571066522701,
+          "mae": 5.148901487827777,
+          "initial_value": 41419.2954,
+          "final_value": 36603.15490000001,
+          "total_change": -4816.140499999994,
+          "predicted_change": -4085.574307949013,
+          "signed_remainder": -730.566192050981,
+          "absolute_remainder": 730.566192050981,
+          "remainder_fraction": -0.15169121250739714,
+          "remainder_denominator_floor": 0.0414192954
+        },
+        "dataset_sha256": "f87b9d1636407b8bb16b5c9b3cc80c0f6e7fe0c1fae921a606feb37743ea5745",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "linear",
+      "dataset_sha256": "a25ac5a65da348b5a98c88769ff6b11894600892b25d6d57585a9633db2b9fc8",
+      "truth_sha256": "ccb11ee3a9090d7cc65283c25b2397b45ce6b700382756d52ef8aea2ce0a20fa",
+      "manifest_sha256": "f0b8cda6a00c92c78ed45a3122296e24123a65f34fe6d8ca52d830c16434efc6",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 139911.65620000003,
+        "final_value": 131982.98220000003,
+        "total_change": -7928.673999999999,
+        "selected_model": "ridge",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 35.675721903102456,
+            "predicted_change": 0.0,
+            "signed_remainder": -1475.8780000000006,
+            "elapsed_seconds": 0.004458167008124292,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 35.675721903102456,
+              "mae": 29.693591348148146,
+              "initial_value": 28079.8911,
+              "final_value": 26604.0131,
+              "total_change": -1475.8780000000006,
+              "predicted_change": 0.0,
+              "signed_remainder": -1475.8780000000006,
+              "absolute_remainder": 1475.8780000000006,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.0280798911
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 0.04280541986647388,
+            "predicted_change": -1473.9394964001476,
+            "signed_remainder": -1.938503599852993,
+            "elapsed_seconds": 0.004102459002751857,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 0.04280541986647388,
+              "mae": 0.035121319094423925,
+              "initial_value": 28079.8911,
+              "final_value": 26604.0131,
+              "total_change": -1475.8780000000006,
+              "predicted_change": -1473.9394964001476,
+              "signed_remainder": -1.938503599852993,
+              "absolute_remainder": 1.938503599852993,
+              "remainder_fraction": -0.0013134578873409538,
+              "remainder_denominator_floor": 0.0280798911
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 2.405757597796613,
+            "predicted_change": -1417.4981321028536,
+            "signed_remainder": -58.37986789714705,
+            "elapsed_seconds": 0.005495166988112032,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 2.405757597796613,
+              "mae": 1.1774938420557313,
+              "initial_value": 28079.8911,
+              "final_value": 26604.0131,
+              "total_change": -1475.8780000000006,
+              "predicted_change": -1417.4981321028536,
+              "signed_remainder": -58.37986789714705,
+              "absolute_remainder": 58.37986789714705,
+              "remainder_fraction": -0.039556025563865733,
+              "remainder_denominator_floor": 0.0280798911
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 3.5296585030440486,
+            "predicted_change": -1275.831265449524,
+            "signed_remainder": -200.04673455047669,
+            "elapsed_seconds": 0.07309404102852568,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 3.5296585030440486,
+              "mae": 2.6700587877400714,
+              "initial_value": 28079.8911,
+              "final_value": 26604.0131,
+              "total_change": -1475.8780000000006,
+              "predicted_change": -1275.831265449524,
+              "signed_remainder": -200.04673455047669,
+              "absolute_remainder": 200.04673455047669,
+              "remainder_fraction": -0.1355442215077917,
+              "remainder_denominator_floor": 0.0280798911
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 1.7542252789182107,
+            "predicted_change": -1350.4899549820584,
+            "signed_remainder": -125.3880450179422,
+            "elapsed_seconds": 0.9445017920224927,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 1.7542252789182107,
+              "mae": 0.9332617640598153,
+              "initial_value": 28079.8911,
+              "final_value": 26604.0131,
+              "total_change": -1475.8780000000006,
+              "predicted_change": -1350.4899549820584,
+              "signed_remainder": -125.3880450179422,
+              "absolute_remainder": 125.3880450179422,
+              "remainder_fraction": -0.08495827230837653,
+              "remainder_denominator_floor": 0.0280798911
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -7928.673999999999,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 0.04393075958008524,
+          "mae": 0.03587465376728964,
+          "initial_value": 27611.3354,
+          "final_value": 26045.5299,
+          "total_change": -1565.8054999999986,
+          "predicted_change": -1563.7375498479232,
+          "signed_remainder": -2.0679501520753547,
+          "absolute_remainder": 2.0679501520753547,
+          "remainder_fraction": -0.0013206941424559798,
+          "remainder_denominator_floor": 0.0276113354
+        },
+        "dataset_sha256": "a25ac5a65da348b5a98c88769ff6b11894600892b25d6d57585a9633db2b9fc8",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "threshold",
+      "dataset_sha256": "ab30556b9f03ed0d945923090aa75f7dbae2a96aa532747a5c813846ff6658cb",
+      "truth_sha256": "ff3d899590c525e4524a7c495b54a9b3c75e71ab3ed7302f155e7aae66168960",
+      "manifest_sha256": "960750606c5c7ab86ebbda538b886d597479fb37e9a654acd790fabc5028e46d",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 129530.1651,
+        "final_value": 114425.1159,
+        "total_change": -15105.049199999994,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 41.612708691573104,
+            "predicted_change": 0.0,
+            "signed_remainder": -2948.931900000003,
+            "elapsed_seconds": 0.0044514580513350666,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 41.612708691573104,
+              "mae": 34.26600521185185,
+              "initial_value": 25997.484900000003,
+              "final_value": 23048.553,
+              "total_change": -2948.931900000003,
+              "predicted_change": 0.0,
+              "signed_remainder": -2948.931900000003,
+              "absolute_remainder": 2948.931900000003,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.025997484900000003
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 12.397834149375418,
+            "predicted_change": -2414.650665278412,
+            "signed_remainder": -534.2812347215913,
+            "elapsed_seconds": 0.004276958992704749,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 12.397834149375418,
+              "mae": 9.274837339074447,
+              "initial_value": 25997.484900000003,
+              "final_value": 23048.553,
+              "total_change": -2948.931900000003,
+              "predicted_change": -2414.650665278412,
+              "signed_remainder": -534.2812347215913,
+              "absolute_remainder": 534.2812347215913,
+              "remainder_fraction": -0.18117788163286874,
+              "remainder_denominator_floor": 0.025997484900000003
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 4.763750836799532,
+            "predicted_change": -2582.924765543634,
+            "signed_remainder": -366.0071344563694,
+            "elapsed_seconds": 0.005729917029384524,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 4.763750836799532,
+              "mae": 2.5219838189899324,
+              "initial_value": 25997.484900000003,
+              "final_value": 23048.553,
+              "total_change": -2948.931900000003,
+              "predicted_change": -2582.924765543634,
+              "signed_remainder": -366.0071344563694,
+              "absolute_remainder": 366.0071344563694,
+              "remainder_fraction": -0.12411515316998978,
+              "remainder_denominator_floor": 0.025997484900000003
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 7.580076260096853,
+            "predicted_change": -2193.8078474998474,
+            "signed_remainder": -755.1240525001558,
+            "elapsed_seconds": 0.0732344159623608,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 7.580076260096853,
+              "mae": 5.022169300284704,
+              "initial_value": 25997.484900000003,
+              "final_value": 23048.553,
+              "total_change": -2948.931900000003,
+              "predicted_change": -2193.8078474998474,
+              "signed_remainder": -755.1240525001558,
+              "absolute_remainder": 755.1240525001558,
+              "remainder_fraction": -0.25606696868793577,
+              "remainder_denominator_floor": 0.025997484900000003
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 4.376239482429105,
+            "predicted_change": -2504.6566350471694,
+            "signed_remainder": -444.2752649528338,
+            "elapsed_seconds": 0.9500693330192007,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 4.376239482429105,
+              "mae": 2.0059729621482774,
+              "initial_value": 25997.484900000003,
+              "final_value": 23048.553,
+              "total_change": -2948.931900000003,
+              "predicted_change": -2504.6566350471694,
+              "signed_remainder": -444.2752649528338,
+              "absolute_remainder": 444.2752649528338,
+              "remainder_fraction": -0.15065633253614075,
+              "remainder_denominator_floor": 0.025997484900000003
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -15105.049199999994,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 3.8897598930862594,
+          "mae": 1.9993452982560045,
+          "initial_value": 25674.1256,
+          "final_value": 22740.4562,
+          "total_change": -2933.669399999999,
+          "predicted_change": -2494.455698823738,
+          "signed_remainder": -439.21370117626066,
+          "absolute_remainder": 439.21370117626066,
+          "remainder_fraction": -0.14971479103141644,
+          "remainder_denominator_floor": 0.025674125599999997
+        },
+        "dataset_sha256": "ab30556b9f03ed0d945923090aa75f7dbae2a96aa532747a5c813846ff6658cb",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "saturation",
+      "dataset_sha256": "7f43e446a26a7ec8bbb05a8ced5f01e13104baff8eb9732ee7e8cc5cc6be19d5",
+      "truth_sha256": "71c7d9a555be88f18dca7eeb206666e128893ba8544c4f4923ce4f209c286bfb",
+      "manifest_sha256": "0f6ae88140ea135d2cccd822d9b3f7eba5d9f820183b619d51bf21dd35455f3d",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 238188.6767,
+        "final_value": 230917.7573,
+        "total_change": -7270.919400000013,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 47.017023441320696,
+            "predicted_change": 0.0,
+            "signed_remainder": -1348.93529999999,
+            "elapsed_seconds": 0.004441709024831653,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 47.017023441320696,
+              "mae": 38.88238654222222,
+              "initial_value": 47808.0415,
+              "final_value": 46459.10620000001,
+              "total_change": -1348.93529999999,
+              "predicted_change": 0.0,
+              "signed_remainder": -1348.93529999999,
+              "absolute_remainder": 1348.93529999999,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.047808041499999995
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 5.760723834895622,
+            "predicted_change": -1295.1583340738725,
+            "signed_remainder": -53.776965926117555,
+            "elapsed_seconds": 0.003937916015274823,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 5.760723834895622,
+              "mae": 4.761231654250122,
+              "initial_value": 47808.0415,
+              "final_value": 46459.10620000001,
+              "total_change": -1348.93529999999,
+              "predicted_change": -1295.1583340738725,
+              "signed_remainder": -53.776965926117555,
+              "absolute_remainder": 53.776965926117555,
+              "remainder_fraction": -0.03986623074221421,
+              "remainder_denominator_floor": 0.047808041499999995
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 2.6526846739772227,
+            "predicted_change": -1302.827126909986,
+            "signed_remainder": -46.10817309000413,
+            "elapsed_seconds": 0.005442416004370898,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 2.6526846739772227,
+              "mae": 1.2851077174294139,
+              "initial_value": 47808.0415,
+              "final_value": 46459.10620000001,
+              "total_change": -1348.93529999999,
+              "predicted_change": -1302.827126909986,
+              "signed_remainder": -46.10817309000413,
+              "absolute_remainder": 46.10817309000413,
+              "remainder_fraction": -0.03418115983027834,
+              "remainder_denominator_floor": 0.047808041499999995
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 3.8911538039149054,
+            "predicted_change": -1158.2122802734375,
+            "signed_remainder": -190.7230197265526,
+            "elapsed_seconds": 0.0725131249637343,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 3.8911538039149054,
+              "mae": 2.9602533031616214,
+              "initial_value": 47808.0415,
+              "final_value": 46459.10620000001,
+              "total_change": -1348.93529999999,
+              "predicted_change": -1158.2122802734375,
+              "signed_remainder": -190.7230197265526,
+              "absolute_remainder": 190.7230197265526,
+              "remainder_fraction": -0.1413878187682938,
+              "remainder_denominator_floor": 0.047808041499999995
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 1.8548320338101028,
+            "predicted_change": -1213.0749117945234,
+            "signed_remainder": -135.86038820546673,
+            "elapsed_seconds": 0.9159800420165993,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 1.8548320338101028,
+              "mae": 1.0568256884173814,
+              "initial_value": 47808.0415,
+              "final_value": 46459.10620000001,
+              "total_change": -1348.93529999999,
+              "predicted_change": -1213.0749117945234,
+              "signed_remainder": -135.86038820546673,
+              "absolute_remainder": 135.86038820546673,
+              "remainder_fraction": -0.10071675654530483,
+              "remainder_denominator_floor": 0.047808041499999995
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -7270.919400000013,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 2.0875933773803457,
+          "mae": 1.2488178247569446,
+          "initial_value": 47170.0796,
+          "final_value": 45750.7321,
+          "total_change": -1419.3474999999962,
+          "predicted_change": -1252.250663771505,
+          "signed_remainder": -167.09683622849116,
+          "absolute_remainder": 167.09683622849116,
+          "remainder_fraction": -0.11772792514059566,
+          "remainder_denominator_floor": 0.0471700796
+        },
+        "dataset_sha256": "7f43e446a26a7ec8bbb05a8ced5f01e13104baff8eb9732ee7e8cc5cc6be19d5",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "u_shaped",
+      "dataset_sha256": "579a163a68dbdc65897a53572aea2c4cc68d18f0d6823124c88e2783668496af",
+      "truth_sha256": "778b8d2c9881d5e4f5138cfc777296a32dc44d9ce950328a59a96da51cc60fe9",
+      "manifest_sha256": "212ea8546b0c591dbd8e4ffe1b4a31e28758865d3334cd43111f5c9fdf1b117c",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 147779.53360000002,
+        "final_value": 140758.1389,
+        "total_change": -7021.3947000000335,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 35.99109823435194,
+            "predicted_change": 0.0,
+            "signed_remainder": -1260.053899999999,
+            "elapsed_seconds": 0.00423000002047047,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 35.99109823435194,
+              "mae": 29.712460718518525,
+              "initial_value": 29663.5153,
+              "final_value": 28403.4614,
+              "total_change": -1260.053899999999,
+              "predicted_change": 0.0,
+              "signed_remainder": -1260.053899999999,
+              "absolute_remainder": 1260.053899999999,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.0296635153
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 6.200703156178724,
+            "predicted_change": -1446.2312211918797,
+            "signed_remainder": 186.17732119188076,
+            "elapsed_seconds": 0.004041499982122332,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 6.200703156178724,
+              "mae": 4.795744263446349,
+              "initial_value": 29663.5153,
+              "final_value": 28403.4614,
+              "total_change": -1260.053899999999,
+              "predicted_change": -1446.2312211918797,
+              "signed_remainder": 186.17732119188076,
+              "absolute_remainder": 186.17732119188076,
+              "remainder_fraction": 0.14775345815911597,
+              "remainder_denominator_floor": 0.0296635153
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 2.917606807425073,
+            "predicted_change": -1327.5838419577703,
+            "signed_remainder": 67.52994195777137,
+            "elapsed_seconds": 0.005456999992020428,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 2.917606807425073,
+              "mae": 1.6072115152716584,
+              "initial_value": 29663.5153,
+              "final_value": 28403.4614,
+              "total_change": -1260.053899999999,
+              "predicted_change": -1327.5838419577703,
+              "signed_remainder": 67.52994195777137,
+              "absolute_remainder": 67.52994195777137,
+              "remainder_fraction": 0.053592899444834405,
+              "remainder_denominator_floor": 0.0296635153
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 4.734740528412474,
+            "predicted_change": -1179.3015117645264,
+            "signed_remainder": -80.75238823547261,
+            "elapsed_seconds": 0.07293537503574044,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 4.734740528412474,
+              "mae": 3.4979394848022465,
+              "initial_value": 29663.5153,
+              "final_value": 28403.4614,
+              "total_change": -1260.053899999999,
+              "predicted_change": -1179.3015117645264,
+              "signed_remainder": -80.75238823547261,
+              "absolute_remainder": 80.75238823547261,
+              "remainder_fraction": -0.06408645553612641,
+              "remainder_denominator_floor": 0.0296635153
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 2.50026311846386,
+            "predicted_change": -1279.7236318477771,
+            "signed_remainder": 19.669731847778166,
+            "elapsed_seconds": 0.9247403749614023,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 2.50026311846386,
+              "mae": 1.3687730298765461,
+              "initial_value": 29663.5153,
+              "final_value": 28403.4614,
+              "total_change": -1260.053899999999,
+              "predicted_change": -1279.7236318477771,
+              "signed_remainder": 19.669731847778166,
+              "absolute_remainder": 19.669731847778166,
+              "remainder_fraction": 0.015610230520915163,
+              "remainder_denominator_floor": 0.0296635153
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -7021.3947000000335,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 2.6036758877823343,
+          "mae": 1.480526352731124,
+          "initial_value": 29205.2696,
+          "final_value": 27780.158900000002,
+          "total_change": -1425.1106999999975,
+          "predicted_change": -1394.4609672025108,
+          "signed_remainder": -30.64973279748665,
+          "absolute_remainder": 30.64973279748665,
+          "remainder_fraction": -0.02150691367167947,
+          "remainder_denominator_floor": 0.029205269599999997
+        },
+        "dataset_sha256": "579a163a68dbdc65897a53572aea2c4cc68d18f0d6823124c88e2783668496af",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "interaction",
+      "dataset_sha256": "cc70df0f1b130e35d680b0e929321609ce9c29c8b0ee6f7c6f4eef852c387364",
+      "truth_sha256": "d961dd95431d62b1a39bd17c21bb2f86926219078164a5597f4c9af82224ec06",
+      "manifest_sha256": "8f4b956dbcbe814cf41dc0fe834b60ff5e629b8c5a1279826101101feec6516f",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 136549.8328,
+        "final_value": 126121.64110000001,
+        "total_change": -10428.191699999996,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 37.782989978331194,
+            "predicted_change": 0.0,
+            "signed_remainder": -2017.5232000000033,
+            "elapsed_seconds": 0.004091791983228177,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 37.782989978331194,
+              "mae": 31.369943848888887,
+              "initial_value": 27369.035400000004,
+              "final_value": 25351.5122,
+              "total_change": -2017.5232000000033,
+              "predicted_change": 0.0,
+              "signed_remainder": -2017.5232000000033,
+              "absolute_remainder": 2017.5232000000033,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.027369035400000002
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 4.328161209984942,
+            "predicted_change": -1956.7372045778247,
+            "signed_remainder": -60.78599542217853,
+            "elapsed_seconds": 0.004015084006823599,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 4.328161209984942,
+              "mae": 3.0966301779044434,
+              "initial_value": 27369.035400000004,
+              "final_value": 25351.5122,
+              "total_change": -2017.5232000000033,
+              "predicted_change": -1956.7372045778247,
+              "signed_remainder": -60.78599542217853,
+              "absolute_remainder": 60.78599542217853,
+              "remainder_fraction": -0.030129019295628636,
+              "remainder_denominator_floor": 0.027369035400000002
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 5.267716180558734,
+            "predicted_change": -1810.7748426654216,
+            "signed_remainder": -206.74835733458167,
+            "elapsed_seconds": 0.0054232089896686375,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 5.267716180558734,
+              "mae": 3.3188578461638403,
+              "initial_value": 27369.035400000004,
+              "final_value": 25351.5122,
+              "total_change": -2017.5232000000033,
+              "predicted_change": -1810.7748426654216,
+              "signed_remainder": -206.74835733458167,
+              "absolute_remainder": 206.74835733458167,
+              "remainder_fraction": -0.10247632212337451,
+              "remainder_denominator_floor": 0.027369035400000002
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 4.928651174449892,
+            "predicted_change": -1578.0233561992645,
+            "signed_remainder": -439.49984380073874,
+            "elapsed_seconds": 0.07443179102847353,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 4.928651174449892,
+              "mae": 3.594402387861887,
+              "initial_value": 27369.035400000004,
+              "final_value": 25351.5122,
+              "total_change": -2017.5232000000033,
+              "predicted_change": -1578.0233561992645,
+              "signed_remainder": -439.49984380073874,
+              "absolute_remainder": 439.49984380073874,
+              "remainder_fraction": -0.21784128370902403,
+              "remainder_denominator_floor": 0.027369035400000002
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 2.3421059363349315,
+            "predicted_change": -1855.224594313524,
+            "signed_remainder": -162.29860568647928,
+            "elapsed_seconds": 6.563787207996938,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 2.3421059363349315,
+              "mae": 1.357175982418963,
+              "initial_value": 27369.035400000004,
+              "final_value": 25351.5122,
+              "total_change": -2017.5232000000033,
+              "predicted_change": -1855.224594313524,
+              "signed_remainder": -162.29860568647928,
+              "absolute_remainder": 162.29860568647928,
+              "remainder_fraction": -0.08044448048303932,
+              "remainder_denominator_floor": 0.027369035400000002
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -10428.191699999996,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 2.2883905520875882,
+          "mae": 1.39295824434068,
+          "initial_value": 26983.3191,
+          "final_value": 24905.0701,
+          "total_change": -2078.249,
+          "predicted_change": -1921.2650140184596,
+          "signed_remainder": -156.98398598154017,
+          "absolute_remainder": 156.98398598154017,
+          "remainder_fraction": -0.0755366589766386,
+          "remainder_denominator_floor": 0.0269833191
+        },
+        "dataset_sha256": "cc70df0f1b130e35d680b0e929321609ce9c29c8b0ee6f7c6f4eef852c387364",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "mixed",
+      "dataset_sha256": "87304e77885f93c326b963a2b69eb42aaab668c24de9a165775afd9ba1c69a7d",
+      "truth_sha256": "3c480cd9f9a9f507cb5f8e6657c63ce49c77fe1840cf654368c60ae8cad27e98",
+      "manifest_sha256": "f486cfd89d055756c18529e2281de8e6128e92541b94ba8a5b892837dc1e6945",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 232313.2414,
+        "final_value": 216273.70500000002,
+        "total_change": -16039.536399999983,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 52.69807770599424,
+            "predicted_change": 0.0,
+            "signed_remainder": -3147.8132999999943,
+            "elapsed_seconds": 0.004457790986634791,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 52.69807770599424,
+              "mae": 42.79808367703704,
+              "initial_value": 46598.4047,
+              "final_value": 43450.591400000005,
+              "total_change": -3147.8132999999943,
+              "predicted_change": 0.0,
+              "signed_remainder": -3147.8132999999943,
+              "absolute_remainder": 3147.8132999999943,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 10.946562130963825,
+            "predicted_change": -2690.9586778172015,
+            "signed_remainder": -456.8546221827928,
+            "elapsed_seconds": 0.004054916033055633,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 10.946562130963825,
+              "mae": 8.331538397139237,
+              "initial_value": 46598.4047,
+              "final_value": 43450.591400000005,
+              "total_change": -3147.8132999999943,
+              "predicted_change": -2690.9586778172015,
+              "signed_remainder": -456.8546221827928,
+              "absolute_remainder": 456.8546221827928,
+              "remainder_fraction": -0.14513396400694845,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 6.432004063580326,
+            "predicted_change": -2771.616034677849,
+            "signed_remainder": -376.19726532214554,
+            "elapsed_seconds": 0.005658332956954837,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 6.432004063580326,
+              "mae": 3.8290765117238204,
+              "initial_value": 46598.4047,
+              "final_value": 43450.591400000005,
+              "total_change": -3147.8132999999943,
+              "predicted_change": -2771.616034677849,
+              "signed_remainder": -376.19726532214554,
+              "absolute_remainder": 376.19726532214554,
+              "remainder_fraction": -0.11951066644331994,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 7.728377127301374,
+            "predicted_change": -2371.0583057403564,
+            "signed_remainder": -776.7549942596379,
+            "elapsed_seconds": 0.07290920801460743,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 7.728377127301374,
+              "mae": 5.137779699696859,
+              "initial_value": 46598.4047,
+              "final_value": 43450.591400000005,
+              "total_change": -3147.8132999999943,
+              "predicted_change": -2371.0583057403564,
+              "signed_remainder": -776.7549942596379,
+              "absolute_remainder": 776.7549942596379,
+              "remainder_fraction": -0.24676018563732458,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 3.9058983358193244,
+            "predicted_change": -2790.3676937554337,
+            "signed_remainder": -357.4456062445606,
+            "elapsed_seconds": 5.810417083033826,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 3.9058983358193244,
+              "mae": 2.1269464308313113,
+              "initial_value": 46598.4047,
+              "final_value": 43450.591400000005,
+              "total_change": -3147.8132999999943,
+              "predicted_change": -2790.3676937554337,
+              "signed_remainder": -357.4456062445606,
+              "absolute_remainder": 357.4456062445606,
+              "remainder_fraction": -0.11355362347714881,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -16039.536399999983,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 3.5401416258322134,
+          "mae": 2.065107386703531,
+          "initial_value": 46198.78839999999,
+          "final_value": 43039.826799999995,
+          "total_change": -3158.961599999995,
+          "predicted_change": -2817.534768805912,
+          "signed_remainder": -341.4268311940832,
+          "absolute_remainder": 341.4268311940832,
+          "remainder_fraction": -0.10808198212795107,
+          "remainder_denominator_floor": 0.04619878839999999
+        },
+        "dataset_sha256": "87304e77885f93c326b963a2b69eb42aaab668c24de9a165775afd9ba1c69a7d",
+        "attribution_version": "not_computed"
+      }
+    },
+    {
+      "scenario": "regime_shift",
+      "dataset_sha256": "12cb857a5dbe9480d2a04d368ff4c5de93e1d38da2679879270b59cab2995c0e",
+      "truth_sha256": "9f2ff55bc18add89d1d0b505613d342a0e942541e8feffac5700fd9921248846",
+      "manifest_sha256": "c3afdd4ee5289bd3643a0e23d3ea708faae9a570beb14cb067bba9f8d6c34589",
+      "analysis": {
+        "target_metric": "npv",
+        "initial_value": 232313.2414,
+        "final_value": 126273.70499999999,
+        "total_change": -106039.53640000001,
+        "selected_model": "ebm",
+        "benchmark_summary": [
+          {
+            "model_name": "mean",
+            "status": "completed",
+            "validation_rmse": 87.17218941405766,
+            "predicted_change": 0.0,
+            "signed_remainder": -21147.8133,
+            "elapsed_seconds": 0.005119749985169619,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "strategy": "mean"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 87.17218941405766,
+              "mae": 71.90846083259264,
+              "initial_value": 46598.4047,
+              "final_value": 25450.591399999998,
+              "total_change": -21147.8133,
+              "predicted_change": 0.0,
+              "signed_remainder": -21147.8133,
+              "absolute_remainder": 21147.8133,
+              "remainder_fraction": -1.0,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ridge",
+            "status": "completed",
+            "validation_rmse": 61.95551801854355,
+            "predicted_change": -2690.9586778172015,
+            "signed_remainder": -18456.8546221828,
+            "elapsed_seconds": 0.004148208012338728,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 61.95551801854355,
+              "mae": 60.98882492049186,
+              "initial_value": 46598.4047,
+              "final_value": 25450.591399999998,
+              "total_change": -21147.8133,
+              "predicted_change": -2690.9586778172015,
+              "signed_remainder": -18456.8546221828,
+              "absolute_remainder": 18456.8546221828,
+              "remainder_fraction": -0.8727547553194447,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "gam_spline",
+            "status": "completed",
+            "validation_rmse": 61.6994846133379,
+            "predicted_change": -2771.616034677849,
+            "signed_remainder": -18376.197265322153,
+            "elapsed_seconds": 0.005850834015291184,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "alpha": 1.0,
+              "n_knots": 6,
+              "degree": 3,
+              "knots": "uniform",
+              "extrapolation": "linear",
+              "interactions": false
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 61.6994846133379,
+              "mae": 61.37879771064672,
+              "initial_value": 46598.4047,
+              "final_value": 25450.591399999998,
+              "total_change": -21147.8133,
+              "predicted_change": -2771.616034677849,
+              "signed_remainder": -18376.197265322153,
+              "absolute_remainder": 18376.197265322153,
+              "remainder_fraction": -0.8689407743788882,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "xgboost",
+            "status": "completed",
+            "validation_rmse": 63.00402154445763,
+            "predicted_change": -2371.0583057403564,
+            "signed_remainder": -18776.754994259645,
+            "elapsed_seconds": 0.07326812500832602,
+            "stability_score": null,
+            "is_selected": false,
+            "parameters": {
+              "n_estimators": 300,
+              "max_depth": 3,
+              "learning_rate": 0.05,
+              "n_jobs": 2,
+              "random_state": 42,
+              "tree_method": "hist",
+              "objective": "reg:squarederror"
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 63.00402154445763,
+              "mae": 62.58149098127239,
+              "initial_value": 46598.4047,
+              "final_value": 25450.591399999998,
+              "total_change": -21147.8133,
+              "predicted_change": -2371.0583057403564,
+              "signed_remainder": -18776.754994259645,
+              "absolute_remainder": 18776.754994259645,
+              "remainder_fraction": -0.8878816323888978,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          },
+          {
+            "model_name": "ebm",
+            "status": "completed",
+            "validation_rmse": 61.2785668884585,
+            "predicted_change": -2790.3676937554337,
+            "signed_remainder": -18357.445606244568,
+            "elapsed_seconds": 5.838494957948569,
+            "stability_score": null,
+            "is_selected": true,
+            "parameters": {
+              "interactions": 5,
+              "max_rounds": 2000,
+              "outer_bags": 4,
+              "n_jobs": 2,
+              "random_state": 42
+            },
+            "validation": {
+              "scope": "validation",
+              "loan_count": 300,
+              "rmse": 61.2785668884585,
+              "mae": 61.16505598411272,
+              "initial_value": 46598.4047,
+              "final_value": 25450.591399999998,
+              "total_change": -21147.8133,
+              "predicted_change": -2790.3676937554337,
+              "signed_remainder": -18357.445606244568,
+              "absolute_remainder": 18357.445606244568,
+              "remainder_fraction": -0.8680540794373557,
+              "remainder_denominator_floor": 0.0465984047
+            },
+            "failure_reason": null
+          }
+        ],
+        "factor_contributions": [],
+        "interactions": [],
+        "unexplained_remainder": -106039.53640000001,
+        "confidence_level": "low",
+        "limitations": [
+          "Prediction-only selection: factor contributions and stability have not been evaluated.",
+          "State totals describe the full input portfolio; candidate and test errors describe held-out loans only.",
+          "One T0/T1 transition on disjoint loans is not a multi-window temporal reliability assessment.",
+          "Parameters are fixed; no hyperparameter search or predictive reliability acceptance gate was performed.",
+          "Calendar dates are absent; only the declared relative order T0 before T1 is used."
+        ],
+        "protocol_version": "forward_grouped_v1",
+        "selection_reason": "Lowest validation T1 RMSE; ties by model name. Test data do not select the model.",
+        "selection_status": "prediction_only",
+        "final_test": {
+          "scope": "test",
+          "loan_count": 300,
+          "rmse": 61.15394945065961,
+          "mae": 61.060607755690675,
+          "initial_value": 46198.78839999999,
+          "final_value": 25039.826800000003,
+          "total_change": -21158.961599999988,
+          "predicted_change": -2817.534768805912,
+          "signed_remainder": -18341.426831194076,
+          "absolute_remainder": 18341.426831194076,
+          "remainder_fraction": -0.8668396482743315,
+          "remainder_denominator_floor": 0.04619878839999999
+        },
+        "dataset_sha256": "12cb857a5dbe9480d2a04d368ff4c5de93e1d38da2679879270b59cab2995c0e",
+        "attribution_version": "not_computed"
+      }
+    }
+  ]
+}

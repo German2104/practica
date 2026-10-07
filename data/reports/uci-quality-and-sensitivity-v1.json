@@ -1,0 +1,532 @@
+{
+  "created_at": "2026-09-29T19:14:09.595233+00:00",
+  "source_sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602",
+  "windows": [
+    {
+      "source_id": "uci-default-credit-card-clients-350",
+      "source_url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+      "license": "CC BY 4.0",
+      "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI:10.24432/C55S3H",
+      "valuation_version": "assumed_one_month_receivable_v1",
+      "target_metric": "model_npv",
+      "currency": "TWD",
+      "feature_names": [
+        "volume",
+        "pd"
+      ],
+      "valuation_assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "monthly_pd_by_status": {
+        "-2,-1,0": 0.01,
+        "1": 0.04,
+        "2": 0.1,
+        "3": 0.2,
+        "4..9": 0.4
+      },
+      "raw_accounts": 30000,
+      "paired_accounts": 29071,
+      "excluded_accounts": 929,
+      "periods": [
+        {
+          "period": "T0",
+          "as_of_date": "2005-04-30",
+          "negative_accounts": 688,
+          "raw_signed_balance": 1166152812.0,
+          "paired_balance": 1164019238.0,
+          "paired_model_npv": -5031157.785621965
+        },
+        {
+          "period": "T1",
+          "as_of_date": "2005-05-31",
+          "negative_accounts": 655,
+          "raw_signed_balance": 1209342029.0,
+          "paired_balance": 1206311733.0,
+          "paired_model_npv": -4980398.656268737
+        }
+      ],
+      "limitations": [
+        "Observed balances, assumed valuation; not a bank NPV or calibrated default model.",
+        "Negative statements are excluded in either period; results cover only the paired subset.",
+        "Nonpositive repayment codes are assigned low scenario PD; their risk is not estimated.",
+        "Next-month default labels, demographics, and future monthly balances are not training factors."
+      ],
+      "distributions": {
+        "volume": {
+          "count": 58142.0,
+          "mean": 40767.9641395205,
+          "std": 60601.8342508116,
+          "min": 0.0,
+          "1%": 0.0,
+          "50%": 18491.0,
+          "95%": 165900.7999999999,
+          "99%": 285697.6799999998,
+          "max": 961664.0
+        },
+        "pd": {
+          "count": 58142.0,
+          "mean": 0.0214545423,
+          "std": 0.0400953202,
+          "min": 0.01,
+          "1%": 0.01,
+          "50%": 0.01,
+          "95%": 0.1,
+          "99%": 0.2,
+          "max": 0.4
+        },
+        "model_npv": {
+          "count": 58142.0,
+          "mean": -172.1914698822,
+          "std": 1887.1913322775,
+          "min": -123920.1950248756,
+          "1%": -7093.6589701493,
+          "50%": 44.9032587065,
+          "95%": 602.0664477612,
+          "99%": 1051.7737233831,
+          "max": 3683.9864676616
+        }
+      }
+    },
+    {
+      "source_id": "uci-default-credit-card-clients-350",
+      "source_url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+      "license": "CC BY 4.0",
+      "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI:10.24432/C55S3H",
+      "valuation_version": "assumed_one_month_receivable_v1",
+      "target_metric": "model_npv",
+      "currency": "TWD",
+      "feature_names": [
+        "volume",
+        "pd"
+      ],
+      "valuation_assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "monthly_pd_by_status": {
+        "-2,-1,0": 0.01,
+        "1": 0.04,
+        "2": 0.1,
+        "3": 0.2,
+        "4..9": 0.4
+      },
+      "raw_accounts": 30000,
+      "paired_accounts": 29042,
+      "excluded_accounts": 958,
+      "periods": [
+        {
+          "period": "T0",
+          "as_of_date": "2005-05-31",
+          "negative_accounts": 655,
+          "raw_signed_balance": 1209342029.0,
+          "paired_balance": 1205251634.0,
+          "paired_model_npv": -4985605.06398018
+        },
+        {
+          "period": "T1",
+          "as_of_date": "2005-06-30",
+          "negative_accounts": 675,
+          "raw_signed_balance": 1297888469.0,
+          "paired_balance": 1295300298.0,
+          "paired_model_npv": -5883605.539253818
+        }
+      ],
+      "limitations": [
+        "Observed balances, assumed valuation; not a bank NPV or calibrated default model.",
+        "Negative statements are excluded in either period; results cover only the paired subset.",
+        "Nonpositive repayment codes are assigned low scenario PD; their risk is not estimated.",
+        "Next-month default labels, demographics, and future monthly balances are not training factors."
+      ],
+      "distributions": {
+        "volume": {
+          "count": 58084.0,
+          "mean": 43050.615178018,
+          "std": 63120.5476197432,
+          "min": 0.0,
+          "1%": 0.0,
+          "50%": 19272.0,
+          "95%": 172273.2,
+          "99%": 298244.2299999998,
+          "max": 927171.0
+        },
+        "pd": {
+          "count": 58084.0,
+          "mean": 0.0222880656,
+          "std": 0.0417465394,
+          "min": 0.01,
+          "1%": 0.01,
+          "50%": 0.01,
+          "95%": 0.1,
+          "99%": 0.2,
+          "max": 0.4
+        },
+        "model_npv": {
+          "count": 58084.0,
+          "mean": -187.129168157,
+          "std": 2044.4631082365,
+          "min": -118332.0437810945,
+          "1%": -7250.0923681592,
+          "50%": 50.8180845771,
+          "95%": 630.9956542288,
+          "99%": 1110.5745626865,
+          "max": 3551.8491044776
+        }
+      }
+    },
+    {
+      "source_id": "uci-default-credit-card-clients-350",
+      "source_url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+      "license": "CC BY 4.0",
+      "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI:10.24432/C55S3H",
+      "valuation_version": "assumed_one_month_receivable_v1",
+      "target_metric": "model_npv",
+      "currency": "TWD",
+      "feature_names": [
+        "volume",
+        "pd"
+      ],
+      "valuation_assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "monthly_pd_by_status": {
+        "-2,-1,0": 0.01,
+        "1": 0.04,
+        "2": 0.1,
+        "3": 0.2,
+        "4..9": 0.4
+      },
+      "raw_accounts": 30000,
+      "paired_accounts": 29033,
+      "excluded_accounts": 967,
+      "periods": [
+        {
+          "period": "T0",
+          "as_of_date": "2005-06-30",
+          "negative_accounts": 675,
+          "raw_signed_balance": 1297888469.0,
+          "paired_balance": 1294785508.0,
+          "paired_model_npv": -5891669.516617002
+        },
+        {
+          "period": "T1",
+          "as_of_date": "2005-07-31",
+          "negative_accounts": 655,
+          "raw_signed_balance": 1410394644.0,
+          "paired_balance": 1406243375.0,
+          "paired_model_npv": -7809289.799353322
+        }
+      ],
+      "limitations": [
+        "Observed balances, assumed valuation; not a bank NPV or calibrated default model.",
+        "Negative statements are excluded in either period; results cover only the paired subset.",
+        "Nonpositive repayment codes are assigned low scenario PD; their risk is not estimated.",
+        "Next-month default labels, demographics, and future monthly balances are not training factors."
+      ],
+      "distributions": {
+        "volume": {
+          "count": 58066.0,
+          "mean": 46516.5308958771,
+          "std": 67456.0928448697,
+          "min": 0.0,
+          "1%": 0.0,
+          "50%": 20311.5,
+          "95%": 183153.25,
+          "99%": 318605.6,
+          "max": 1664089.0
+        },
+        "pd": {
+          "count": 58066.0,
+          "mean": 0.0242005649,
+          "std": 0.0430826177,
+          "min": 0.01,
+          "1%": 0.01,
+          "50%": 0.01,
+          "95%": 0.1,
+          "99%": 0.2,
+          "max": 0.4
+        },
+        "model_npv": {
+          "count": 58066.0,
+          "mean": -235.9549360378,
+          "std": 2287.9844324844,
+          "min": -134479.3751243781,
+          "1%": -7917.7586069652,
+          "50%": 53.3406965174,
+          "95%": 669.7151616915,
+          "99%": 1183.6273358209,
+          "max": 6374.8683084575
+        }
+      }
+    },
+    {
+      "source_id": "uci-default-credit-card-clients-350",
+      "source_url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+      "license": "CC BY 4.0",
+      "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI:10.24432/C55S3H",
+      "valuation_version": "assumed_one_month_receivable_v1",
+      "target_metric": "model_npv",
+      "currency": "TWD",
+      "feature_names": [
+        "volume",
+        "pd"
+      ],
+      "valuation_assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "monthly_pd_by_status": {
+        "-2,-1,0": 0.01,
+        "1": 0.04,
+        "2": 0.1,
+        "3": 0.2,
+        "4..9": 0.4
+      },
+      "raw_accounts": 30000,
+      "paired_accounts": 29033,
+      "excluded_accounts": 967,
+      "periods": [
+        {
+          "period": "T0",
+          "as_of_date": "2005-07-31",
+          "negative_accounts": 655,
+          "raw_signed_balance": 1410394644.0,
+          "paired_balance": 1404089689.0,
+          "paired_model_npv": -7835618.925124466
+        },
+        {
+          "period": "T1",
+          "as_of_date": "2005-08-31",
+          "negative_accounts": 669,
+          "raw_signed_balance": 1475372255.0,
+          "paired_balance": 1472068526.0,
+          "paired_model_npv": -9731696.460099593
+        }
+      ],
+      "limitations": [
+        "Observed balances, assumed valuation; not a bank NPV or calibrated default model.",
+        "Negative statements are excluded in either period; results cover only the paired subset.",
+        "Nonpositive repayment codes are assigned low scenario PD; their risk is not estimated.",
+        "Next-month default labels, demographics, and future monthly balances are not training factors."
+      ],
+      "distributions": {
+        "volume": {
+          "count": 58066.0,
+          "mean": 49532.5700926532,
+          "std": 70418.2537429345,
+          "min": 0.0,
+          "1%": 0.0,
+          "50%": 22376.0,
+          "95%": 193381.5,
+          "99%": 334686.8999999997,
+          "max": 983931.0
+        },
+        "pd": {
+          "count": 58066.0,
+          "mean": 0.0258063238,
+          "std": 0.0444525427,
+          "min": 0.01,
+          "1%": 0.01,
+          "50%": 0.01,
+          "95%": 0.1,
+          "99%": 0.2,
+          "max": 0.4
+        },
+        "model_npv": {
+          "count": 58066.0,
+          "mean": -302.5404778222,
+          "std": 2607.0656028933,
+          "min": -136615.8208955224,
+          "1%": -9023.4610447761,
+          "50%": 53.5724626866,
+          "95%": 702.7801492537,
+          "99%": 1232.5399577114,
+          "max": 3769.2879104477
+        }
+      }
+    },
+    {
+      "source_id": "uci-default-credit-card-clients-350",
+      "source_url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+      "license": "CC BY 4.0",
+      "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI:10.24432/C55S3H",
+      "valuation_version": "assumed_one_month_receivable_v1",
+      "target_metric": "model_npv",
+      "currency": "TWD",
+      "feature_names": [
+        "volume",
+        "pd"
+      ],
+      "valuation_assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "monthly_pd_by_status": {
+        "-2,-1,0": 0.01,
+        "1": 0.04,
+        "2": 0.1,
+        "3": 0.2,
+        "4..9": 0.4
+      },
+      "raw_accounts": 30000,
+      "paired_accounts": 29056,
+      "excluded_accounts": 944,
+      "periods": [
+        {
+          "period": "T0",
+          "as_of_date": "2005-08-31",
+          "negative_accounts": 669,
+          "raw_signed_balance": 1475372255.0,
+          "paired_balance": 1471781857.0,
+          "paired_model_npv": -9743964.739900587
+        },
+        {
+          "period": "T1",
+          "as_of_date": "2005-09-30",
+          "negative_accounts": 590,
+          "raw_signed_balance": 1536699927.0,
+          "paired_balance": 1532715766.0,
+          "paired_model_npv": -9724655.497214029
+        }
+      ],
+      "limitations": [
+        "Observed balances, assumed valuation; not a bank NPV or calibrated default model.",
+        "Negative statements are excluded in either period; results cover only the paired subset.",
+        "Nonpositive repayment codes are assigned low scenario PD; their risk is not estimated.",
+        "Next-month default labels, demographics, and future monthly balances are not training factors."
+      ],
+      "distributions": {
+        "volume": {
+          "count": 58112.0,
+          "mean": 51701.8451094438,
+          "std": 72988.7487892574,
+          "min": 0.0,
+          "1%": 0.0,
+          "50%": 23787.5,
+          "95%": 200146.0499999995,
+          "99%": 346207.6199999999,
+          "max": 983931.0
+        },
+        "pd": {
+          "count": 58112.0,
+          "mean": 0.0259941148,
+          "std": 0.0435106858,
+          "min": 0.01,
+          "1%": 0.01,
+          "50%": 0.01,
+          "95%": 0.1,
+          "99%": 0.2,
+          "max": 0.4
+        },
+        "model_npv": {
+          "count": 58112.0,
+          "mean": -335.0189330451,
+          "std": 2820.5104109231,
+          "min": -138466.0139303483,
+          "1%": -9490.2319353234,
+          "50%": 48.1537313433,
+          "95%": 721.2971169154,
+          "99%": 1259.2072029851,
+          "max": 3769.2879104477
+        }
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "scenario": "baseline",
+      "assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "initial_value": -9743964.739900587,
+      "final_value": -9724655.497214029,
+      "total_change": 19309.242686558515
+    },
+    {
+      "scenario": "coupon_12pct",
+      "assumptions": {
+        "annual_coupon": 0.12,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "initial_value": -16867981.557611752,
+      "final_value": -17147053.747064482,
+      "total_change": -279072.1894527301
+    },
+    {
+      "scenario": "discount_12pct",
+      "assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.12,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 1.0
+      },
+      "initial_value": -16981776.087723028,
+      "final_value": -17264215.450198293,
+      "total_change": -282439.3624752648
+    },
+    {
+      "scenario": "lgd_40pct",
+      "assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.4,
+        "probability_multiplier": 1.0
+      },
+      "initial_value": -1812725.6075622733,
+      "final_value": -1602522.6056717327,
+      "total_change": 210203.0018905406
+    },
+    {
+      "scenario": "lgd_80pct",
+      "assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.8,
+        "probability_multiplier": 1.0
+      },
+      "initial_value": -17675203.8722389,
+      "final_value": -17846788.388756324,
+      "total_change": -171584.5165174231
+    },
+    {
+      "scenario": "pd_half",
+      "assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 0.5
+      },
+      "initial_value": 2450315.4260697323,
+      "final_value": 2763123.8235324216,
+      "total_change": 312808.3974626893
+    },
+    {
+      "scenario": "pd_double",
+      "assumptions": {
+        "annual_coupon": 0.18,
+        "annual_discount": 0.06,
+        "loss_given_default": 0.6,
+        "probability_multiplier": 2
+      },
+      "initial_value": -34132525.071840756,
+      "final_value": -34700214.13870642,
+      "total_change": -567689.0668656677
+    }
+  ]
+}

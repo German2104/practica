@@ -1,0 +1,26 @@
+{
+  "target_metric": "npv",
+  "initial_value": 73108.08889999999,
+  "final_value": 65059.0445,
+  "total_change": -8049.044399999984,
+  "selected_model": "ridge",
+  "benchmark_summary": [
+    {
+      "model_name": "ridge",
+      "validation_rmse": 31.722933046235784,
+      "predicted_change": -2072.928128110303,
+      "signed_remainder": -5976.116271889681,
+      "elapsed_seconds": 0.007250249967910349,
+      "stability_score": null,
+      "is_selected": true
+    }
+  ],
+  "factor_contributions": [],
+  "interactions": [],
+  "unexplained_remainder": -8049.044399999984,
+  "confidence_level": "low",
+  "limitations": [
+    "This initial benchmark compares predictions but does not yet calculate factor contributions.",
+    "Stability and attribution checks are not implemented; model selection is provisional."
+  ]
+}
